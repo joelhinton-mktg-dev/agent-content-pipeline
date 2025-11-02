@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Content Pipeline</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .stage { border: 1px solid #ddd; margin: 20px 0; padding: 20px; border-radius: 8px; }
+        .stage.active { border-color: #007cba; background-color: #f8f9fa; }
+        .stage.completed { border-color: #28a745; background-color: #d4edda; }
+        textarea { width: 100%; height: 100px; margin: 10px 0; }
+        button { background: #007cba; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+        button:disabled { background: #ccc; }
+        .result { background: #f8f9fa; padding: 15px; margin: 10px 0; border-radius: 4px; white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <h1>AI Content Creation Pipeline</h1>
+    <p>Follow the workflow to create SEO-optimized content with 80% automation, 20% human oversight.</p>
+    
+    <div class="stage active" id="stage-outline">
+        <h2>Stage 1: Outline Generation</h2>
+        <textarea id="outline-prompt" placeholder="Enter your content topic (e.g., 'best email marketing software for small business')">best email marketing software for small business</textarea>
+        <button onclick="runStage('outline')">Generate Outline</button>
+        <div id="outline-result" class="result" style="display:none;"></div>
+        <button id="approve-outline" onclick="approveStage('outline')" style="display:none;">Approve & Continue</button>
+    </div>
+    
+    <div class="stage" id="stage-content">
+        <h2>Stage 2: Content Creation</h2>
+        <textarea id="content-prompt" placeholder="Outline will be automatically inserted here"></textarea>
+        <button onclick="runStage('content')" disabled>Create Content</button>
+        <div id="content-result" class="result" style="display:none;"></div>
+        <button id="approve-content" onclick="approveStage('content')" style="display:none;">Approve & Continue</button>
+    </div>
+    
+    <div class="stage" id="stage-seo">
+        <h2>Stage 3: SEO Optimization</h2>
+        <textarea id="seo-prompt" placeholder="Content will be automatically inserted here"></textarea>
+        <button onclick="runStage('seo')" disabled>Optimize for SEO</button>
+        <div id="seo-result" class="result" style="display:none;"></div>
+        <button id="approve-seo" onclick="approveStage('seo')" style="display:none;">Approve & Continue</button>
+    </div>
+    
+    <div class="stage" id="stage-publish">
+        <h2>Stage 4: Publication Package</h2>
+        <textarea id="publish-prompt" placeholder="Content and SEO recommendations will be automatically inserted here"></textarea>
+        <button onclick="runStage('publish')" disabled>Create Publication Package</button>
+        <div id="publish-result" class="result" style="display:none;"></div>
+        <button onclick="downloadPackage()" style="display:none;" id="download-btn">Download Complete Package</button>
+    </div>
+
+    <script>
+        let pipelineData = {};
+        
+        async function runStage(stage) {
+            const prompt = document.getElementById(stage + '-prompt').value;
+            const button = event.target;
+            button.disabled = true;
+            button.textContent = 'Processing...';
+            
+            try {
+                const response = await fetch('/run_stage', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({stage: stage, prompt: prompt})
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    document.getElementById(stage + '-result').textContent = result.result;
+                    document.getElementById(stage + '-result').style.display = 'block';
+                    document.getElementById('approve-' + stage).style.display = 'inline-block';
+                    pipelineData[stage] = result.result;
+                } else {
+                    alert('Error: ' + result.error);
+                }
+            } catch (error) {
+                alert('Network error: ' + error);
+            }
+            
+            button.disabled = false;
+            button.textContent = getButtonText(stage);
+        }
+        
+        function approveStage(stage) {
+            document.getElementById('stage-' + stage).classList.add('completed');
+            document.getElementById('stage-' + stage).classList.remove('active');
+            
+            const nextStages = {
+                'outline': 'content',
+                'content': 'seo', 
+                'seo': 'publish'
+            };
+            
+            if (nextStages[stage]) {
+                const nextStage = nextStages[stage];
+                document.getElementById('stage-' + nextStage).classList.add('active');
+                
+                // Auto-populate next stage prompt
+                if (nextStage === 'content') {
+                    document.getElementById('content-prompt').value = `Using this outline, write comprehensive content with current data and research:\n\n${pipelineData.outline}`;
+                } else if (nextStage === 'seo') {
+                    document.getElementById('seo-prompt').value = `Optimize this content for SEO/AEO/GEO:\n\n${pipelineData.content}`;
+                } else if (nextStage === 'publish') {
+                    document.getElementById('publish-prompt').value = `Create WordPress publication package using:\n\nCONTENT:\n${pipelineData.content}\n\nSEO RECOMMENDATIONS:\n${pipelineData.seo}`;
+                }
+                
+                document.querySelector(`#stage-${nextStage} button`).disabled = false;
+            } else {
+                // Final stage completed
+                document.getElementById('download-btn').style.display = 'inline-block';
+            }
+        }
+        
+        function getButtonText(stage) {
+            const texts = {
+                'outline': 'Generate Outline',
+                'content': 'Create Content',
+                'seo': 'Optimize for SEO',
+                'publish': 'Create Publication Package'
+            };
+            return texts[stage];
+        }
+        
+        function downloadPackage() {
+            const package = JSON.stringify(pipelineData, null, 2);
+            const blob = new Blob([package], {type: 'application/json'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'content-pipeline-package.json';
+            a.click();
+        }
+    </script>
+</body>
+</html>

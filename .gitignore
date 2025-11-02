@@ -1,0 +1,274 @@
+# AI Content Pipeline - Git Ignore Configuration
+
+# ========================
+# Pipeline Output Directories
+# ========================
+single_session_pipeline_*/
+*_pipeline_*/
+pipeline_output_*/
+output_*/
+results_*/
+
+# ========================
+# Environment & API Keys
+# ========================
+.env
+*.env
+.env.local
+.env.production
+.env.staging
+
+# API key files
+api_keys.txt
+credentials.json
+service_account.json
+
+# ========================
+# Pipeline Generated Files
+# ========================
+*.txt
+!README.txt
+!requirements.txt
+
+# Session logs
+session_*.log
+pipeline_*.log
+
+# Temporary pipeline files
+temp_*.json
+temp_*.txt
+*_temp.*
+
+# ========================
+# Python Environment
+# ========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+.env/
+
+# ========================
+# ADK & Google AI Specific
+# ========================
+.adk/
+adk_cache/
+*.adk
+session_cache/
+conversation_cache/
+
+# Model artifacts
+model_cache/
+*.model
+*.checkpoint
+
+# ========================
+# IDE & Editor Files
+# ========================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Atom
+.atom/
+
+# ========================
+# Operating System
+# ========================
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+.Trash-*
+.nfs*
+
+# ========================
+# Archive & Backup Files
+# ========================
+*.bak
+*.backup
+*.old
+*.orig
+*.save
+*.tmp
+
+# Archive formats
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# ========================
+# Documentation Build
+# ========================
+docs/_build/
+docs/build/
+.sphinx/
+
+# ========================
+# Testing & Coverage
+# ========================
+.coverage
+.pytest_cache/
+.tox/
+.nox/
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Unit test / coverage reports
+htmlcov/
+.coverage.*
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# ========================
+# Pipeline Specific Exclusions
+# ========================
+# Include important configuration files
+!.env.example
+!.env.template
+
+# Include documentation markdown files
+!*.md
+!docs/**/*.md
+
+# Include agent configuration
+!*/agent.py
+!*/prompts.txt
+
+# Include example output (if any)
+!examples/
+!samples/
+!demo_output/
+
+# ========================
+# Security Files
+# ========================
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# OAuth tokens
+token.json
+credentials_*.json
+
+# ========================
+# Large File Exclusions
+# ========================
+# Exclude large generated content
+*_64k_*.txt
+*_large_content_*.txt
+bulk_generation_*/
+
+# Exclude large session histories
+session_history_*.json
+conversation_history_*.json
+
+# ========================
+# Deployment Artifacts
+# ========================
+deployment.log
+*.pid
+nohup.out
+
+# Container files
+Dockerfile.production
+docker-compose.override.yml
+
+# ========================
+# Content Pipeline Patterns
+# ========================
+# Exclude generated content by pattern
+outline_*.txt
+content_*.txt
+seo_*.txt
+publish_*.txt
+
+# Exclude timestamped outputs
+*_[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]/
+*_2024*/
+*_2025*/
+
+# ========================
+# AI Model Artifacts
+# ========================
+# Exclude any downloaded model files
+*.bin
+*.safetensors
+*.msgpack
+pytorch_model.bin
+model.safetensors
+
+# Exclude tokenizer files
+vocab.txt
+tokenizer.model
+special_tokens_map.json
+
+# ========================
+# Performance & Debug
+# ========================
+# Profiling output
+*.prof
+*.pstats
+
+# Debug dumps
+debug_*.json
+trace_*.log
+memory_profile_*.txt
+
+# ========================
+# Custom Exclusions
+# ========================
+# Add project-specific patterns below this line

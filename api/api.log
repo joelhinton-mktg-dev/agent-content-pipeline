@@ -1,0 +1,44 @@
+2025-11-02 12:10:39,834 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-02 12:10:59,492 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-02 12:11:13,417 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-02 12:12:57,753 - api.main - INFO - API key verified: Demo User (1/10)
+2025-11-02 12:13:42,438 - api.main - INFO - API key verified: Demo User (2/10)
+2025-11-02 12:13:42,439 - api.main - INFO - Content generation started for job feaaf129-da2a-4a6a-a371-378aa11fc976 by Demo User
+2025-11-02 12:13:42,441 - api.main - INFO - Starting pipeline for job feaaf129-da2a-4a6a-a371-378aa11fc976: AI Automations for Marketing
+2025-11-02 12:13:42,442 - google_adk.google.adk.runners - WARNING - App name mismatch detected. The runner is configured with app name "ai-content-pipeline", but the root agent was loaded from "/home/joel/ai-content-pipeline/.venv/lib/python3.12/site-packages/google/adk/agents", which implies app name "agents".
+2025-11-02 12:13:42,503 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-02 12:13:42,504 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-02 12:14:27,963 - api.main - INFO - API key verified: Demo User (3/10)
+2025-11-02 12:14:50,222 - api.main - INFO - API key verified: Demo User (4/10)
+2025-11-02 12:15:00,946 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-11-02 12:15:00,993 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-02 12:15:00,997 - google_adk.google.adk.runners - WARNING - App name mismatch detected. The runner is configured with app name "ai-content-pipeline", but the root agent was loaded from "/home/joel/ai-content-pipeline/.venv/lib/python3.12/site-packages/google/adk/agents", which implies app name "agents".
+2025-11-02 12:15:00,998 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: outline_generator, event id: df254a62-323f-46e2-bbc1-11c0c3b1ad2a
+2025-11-02 12:15:01,039 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-02 12:15:01,039 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-02 12:15:39,058 - api.main - INFO - API key verified: Demo User (5/10)
+2025-11-02 12:16:30,414 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-11-02 12:16:30,464 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-02 12:16:30,471 - google_adk.google.adk.runners - WARNING - App name mismatch detected. The runner is configured with app name "ai-content-pipeline", but the root agent was loaded from "/home/joel/ai-content-pipeline/.venv/lib/python3.12/site-packages/google/adk/agents", which implies app name "agents".
+2025-11-02 12:16:30,474 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: research_content_creator, event id: 46997169-1e8a-4899-ae8f-b3f6b3bb3287
+2025-11-02 12:16:30,474 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: outline_generator, event id: df254a62-323f-46e2-bbc1-11c0c3b1ad2a
+2025-11-02 12:16:30,513 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-02 12:16:30,513 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-02 12:17:16,672 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-11-02 12:17:16,676 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-02 12:17:16,681 - google_adk.google.adk.runners - WARNING - App name mismatch detected. The runner is configured with app name "ai-content-pipeline", but the root agent was loaded from "/home/joel/ai-content-pipeline/.venv/lib/python3.12/site-packages/google/adk/agents", which implies app name "agents".
+2025-11-02 12:17:16,684 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: seo_optimizer, event id: 48b002c9-1d7c-42dc-aabc-b53b6dc8e6ec
+2025-11-02 12:17:16,684 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: research_content_creator, event id: 46997169-1e8a-4899-ae8f-b3f6b3bb3287
+2025-11-02 12:17:16,684 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: outline_generator, event id: df254a62-323f-46e2-bbc1-11c0c3b1ad2a
+2025-11-02 12:17:16,720 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-02 12:17:16,721 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-02 12:19:16,482 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-11-02 12:19:16,544 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-02 12:19:16,550 - api.main - INFO - Pipeline completed for job feaaf129-da2a-4a6a-a371-378aa11fc976: 194726 chars, 100.0% quality
+2025-11-02 13:11:13,418 - api.main - INFO - Rate limits reset for all API keys
+2025-11-02 14:11:13,422 - api.main - INFO - Rate limits reset for all API keys
+2025-11-02 14:31:23,618 - api.main - INFO - API key verified: Demo User (1/10)
+2025-11-02 14:31:58,643 - api.main - INFO - API key verified: Demo User (2/10)
+2025-11-02 15:11:13,424 - api.main - INFO - Rate limits reset for all API keys
+2025-11-02 16:11:13,427 - api.main - INFO - Rate limits reset for all API keys
+2025-11-02 17:11:13,429 - api.main - INFO - Rate limits reset for all API keys
