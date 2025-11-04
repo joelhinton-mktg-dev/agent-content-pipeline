@@ -63,6 +63,10 @@ class ContentRequest(BaseModel):
     topic: str = Field(..., min_length=3, max_length=200, description="Content topic")
     keywords: Optional[List[str]] = Field(default=[], description="Target keywords")
     include_images: bool = Field(default=True, description="Include image placeholders")
+    include_research: bool = Field(default=False, description="Include real-time research via Perplexity API")
+    include_citations: bool = Field(default=False, description="Include automatic citations and bibliography (requires research)")
+    include_fact_check: bool = Field(default=False, description="Include fact-checking verification against research data (requires research)")
+    generate_images: bool = Field(default=False, description="Generate AI images using DALL-E 3 (requires OpenAI API key)")
     format: str = Field(default="wordpress", pattern="^(wordpress|markdown|json)$", description="Output format")
     
     @validator('topic')
@@ -98,7 +102,11 @@ class ContentResult(BaseModel):
     job_id: str
     status: str
     outline: Optional[str]
+    research: Optional[Dict[str, Any]]
     content: Optional[str]
+    citations: Optional[Dict[str, Any]]
+    images: Optional[Dict[str, Any]]
+    fact_check: Optional[Dict[str, Any]]
     seo: Optional[str]
     publish: Optional[str]
     total_chars: int
@@ -233,28 +241,111 @@ Make this outline extremely detailed and actionable for content creation."""
 
         outline_result = await orchestrator.run_agent_in_session('outline_generator', outline_prompt)
         
+        # Stage 1.5: Research (optional)
+        research_data = None
+        if request.include_research:
+            job_storage[job_id].update({
+                "progress": 40,
+                "current_stage": "conducting_research",
+                "updated_at": datetime.now()
+            })
+            
+            research_data = await orchestrator.run_research_stage(outline_result)
+            
         # Stage 2: Content
         job_storage[job_id].update({
             "progress": 50,
-            "current_stage": "creating_content",
+            "current_stage": "creating_content", 
             "updated_at": datetime.now()
         })
         
-        content_prompt = f"""Now please write a complete, comprehensive article based on the outline you just created.
+        # Build content prompt with optional research data
+        if request.include_research and research_data and research_data['metadata'].get('successful_queries', 0) > 0:
+            research_context = f"""
+RESEARCH DATA AVAILABLE:
+Use this current research data to enhance your article:
+
+STATISTICS:
+{chr(10).join([f"• {stat}" for stat in research_data['statistics'][:10]])}
+
+EXPERT INSIGHTS:  
+{chr(10).join([f"• {quote}" for quote in research_data['expert_quotes'][:5]])}
+
+SOURCES FOR ATTRIBUTION:
+{chr(10).join([f"• {source}" for source in research_data['sources'][:10]])}
+"""
+        else:
+            research_context = ""
+
+        content_prompt = f"""Now please write a complete, comprehensive article based on the outline you just created.{research_context}
 
 Requirements:
 - Write full, detailed sections for each heading in your outline
-- Include current statistics, data, and expert insights
+- Include current statistics, data, and expert insights{' from the research data provided above' if research_context else ''}
 - Add specific examples and case studies
 - Include image placeholders as suggested in your outline
 - Use proper heading structure (H1, H2, H3)
 - Write engaging, publication-ready content
 - Target the keyword: "{request.topic}"
 - Format for: {request.format}
+{f"- Incorporate the research statistics and expert quotes naturally into your content" if research_context else ""}
+{f"- Attribute sources appropriately when using research data" if research_context else ""}
 
 Please provide the complete article content now."""
 
         content_result = await orchestrator.run_agent_in_session('research_content_creator', content_prompt)
+        
+        # Stage 2.5: Citations (optional)
+        citation_result = None
+        final_content = content_result  # Default to original content
+        
+        if request.include_citations:
+            if not request.include_research or not research_data or research_data['metadata'].get('successful_queries', 0) == 0:
+                logger.warning(f"Citations requested for job {job_id} but no research data available")
+            else:
+                job_storage[job_id].update({
+                    "progress": 60,
+                    "current_stage": "adding_citations",
+                    "updated_at": datetime.now()
+                })
+                
+                citation_result = await orchestrator.run_citation_stage(content_result, research_data)
+                
+                if citation_result['citation_count'] > 0:
+                    final_content = citation_result['cited_content']
+        
+        # Stage 2.6: Image Generation (optional)
+        image_result = None
+        
+        if request.generate_images:
+            job_storage[job_id].update({
+                "progress": 60,
+                "current_stage": "generating_images",
+                "updated_at": datetime.now()
+            })
+            
+            # Use cited content if available, otherwise original content
+            content_for_images = final_content if citation_result else content_result
+            
+            image_result = await orchestrator.run_image_generation_stage(content_for_images, outline_result, job_id)
+        
+        # Stage 2.7: Fact-Checking (optional)
+        fact_check_result = None
+        
+        if request.include_fact_check:
+            if not request.include_research or not research_data or research_data['metadata'].get('successful_queries', 0) == 0:
+                logger.warning(f"Fact-checking requested for job {job_id} but no research data available")
+            else:
+                job_storage[job_id].update({
+                    "progress": 65,
+                    "current_stage": "fact_checking",
+                    "updated_at": datetime.now()
+                })
+                
+                # Use final content (with citations if available)
+                content_for_fact_check = final_content if citation_result else content_result
+                
+                fact_check_result = await orchestrator.run_fact_check_stage(content_for_fact_check, research_data)
         
         # Stage 3: SEO
         job_storage[job_id].update({
@@ -263,7 +354,35 @@ Please provide the complete article content now."""
             "updated_at": datetime.now()
         })
         
-        seo_prompt = f"""Please perform comprehensive SEO optimization analysis on the article content you just wrote.
+        # Build SEO prompt considering citations, images, and fact-checking
+        content_reference = "the article content you just wrote"
+        if request.include_citations and citation_result and citation_result['citation_count'] > 0:
+            content_reference = "the cited article content with bibliography that you just reviewed"
+        
+        # Add image context if images were generated
+        image_context = ""
+        if request.generate_images and image_result and image_result['count'] > 0:
+            image_context = f"""
+
+GENERATED IMAGES CONTEXT:
+{image_result['count']} images have been generated for this content:
+{chr(10).join([f"• {img.get('type', 'image')} image for {img.get('section', 'section')}: {img.get('alt_text', 'description')}" for img in image_result['images'][:5]])}
+
+Consider these images in your SEO analysis for image optimization recommendations."""
+
+        # Add fact-checking context if fact-checking was performed
+        fact_check_context = ""
+        if request.include_fact_check and fact_check_result and fact_check_result['statistics']['total_claims'] > 0:
+            fact_check_context = f"""
+
+FACT-CHECKING RESULTS:
+Content accuracy score: {fact_check_result['accuracy_score']:.2f}
+Claims verified: {fact_check_result['statistics']['verified']}/{fact_check_result['statistics']['total_claims']}
+{f"⚠️ Unsupported claims identified: {fact_check_result['statistics']['unsupported']}" if fact_check_result['statistics']['unsupported'] > 0 else "✅ All claims well-supported"}
+
+Consider this accuracy assessment in your SEO recommendations for E-A-T (Expertise, Authoritativeness, Trustworthiness) optimization."""
+
+        seo_prompt = f"""Please perform comprehensive SEO optimization analysis on {content_reference}.{image_context}{fact_check_context}
 
 Focus on:
 - Technical SEO audit of the content structure
@@ -272,7 +391,10 @@ Focus on:
 - Featured snippet optimization opportunities
 - Voice search optimization
 - Internal linking strategy
-- Image alt text recommendations
+- Image alt text recommendations{' and image placement optimization' if image_result and image_result['count'] > 0 else ''}
+{f"- Citation and reference optimization for authority building" if citation_result and citation_result['citation_count'] > 0 else ""}
+{f"- Image SEO optimization for the {image_result['count']} generated images" if image_result and image_result['count'] > 0 else ""}
+{f"- E-A-T optimization based on {fact_check_result['accuracy_score']:.2f} accuracy score and fact-checking results" if fact_check_result and fact_check_result['statistics']['total_claims'] > 0 else ""}
 
 Target keyword: "{request.topic}"
 Target keywords: {', '.join(request.keywords) if request.keywords else 'N/A'}
@@ -320,7 +442,11 @@ Please create a comprehensive publication package ready for {request.format}."""
             job_id=job_id,
             status="completed",
             outline=outline_result,
+            research=research_data,
             content=content_result,
+            citations=citation_result,
+            images=image_result,
+            fact_check=fact_check_result,
             seo=seo_result,
             publish=publish_result,
             total_chars=total_chars,

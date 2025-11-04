@@ -42,3 +42,119 @@
 2025-11-02 15:11:13,424 - api.main - INFO - Rate limits reset for all API keys
 2025-11-02 16:11:13,427 - api.main - INFO - Rate limits reset for all API keys
 2025-11-02 17:11:13,429 - api.main - INFO - Rate limits reset for all API keys
+2025-11-02 18:11:13,434 - api.main - INFO - Rate limits reset for all API keys
+2025-11-02 19:11:13,440 - api.main - INFO - Rate limits reset for all API keys
+2025-11-02 20:11:13,443 - api.main - INFO - Rate limits reset for all API keys
+2025-11-02 21:11:13,448 - api.main - INFO - Rate limits reset for all API keys
+2025-11-02 22:11:13,453 - api.main - INFO - Rate limits reset for all API keys
+2025-11-02 23:11:13,456 - api.main - INFO - Rate limits reset for all API keys
+2025-11-03 09:08:19,295 - api.main - INFO - Rate limits reset for all API keys
+2025-11-03 10:08:19,298 - api.main - INFO - Rate limits reset for all API keys
+2025-11-03 10:55:29,564 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 10:55:34,435 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 10:56:27,771 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 10:56:31,225 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 11:00:41,194 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 11:00:44,859 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 11:00:59,099 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 11:01:02,172 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 11:05:23,501 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 11:05:26,834 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 11:06:08,258 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 11:06:11,402 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 11:14:44,268 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 11:14:47,739 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 11:14:59,171 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 11:15:02,212 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 11:29:52,804 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 11:30:02,235 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 11:34:30,168 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 11:34:33,260 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 11:34:44,690 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 11:34:47,954 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 12:01:56,235 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 12:02:01,034 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 12:04:04,377 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 12:04:08,931 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 12:33:19,850 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 12:33:24,442 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 12:35:11,118 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 12:35:14,158 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 12:47:23,569 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 12:47:26,831 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 12:49:57,711 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 12:50:00,735 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 13:10:14,846 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 13:10:19,400 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 13:10:44,969 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 13:10:48,062 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 13:11:01,300 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 13:11:04,391 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 13:11:29,559 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 13:11:32,618 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 13:12:20,950 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 13:12:23,998 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 13:12:38,635 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 13:12:41,697 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 13:13:26,319 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 13:13:29,323 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 13:13:45,068 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 13:13:48,115 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 14:13:48,116 - api.main - INFO - Rate limits reset for all API keys
+2025-11-03 14:39:17,083 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 14:39:22,053 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 14:44:27,038 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 14:44:30,434 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 14:46:28,928 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 14:46:32,166 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 14:46:42,393 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 14:46:45,495 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 14:47:03,941 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 14:47:06,992 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 14:47:21,829 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 14:47:24,968 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 14:47:39,908 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 14:47:43,143 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 14:48:04,896 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 14:48:08,048 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 14:48:20,879 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 14:48:24,143 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 14:48:42,087 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 14:48:45,189 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 14:49:02,232 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 14:49:05,511 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 14:50:06,178 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 14:50:09,446 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 14:53:26,649 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 14:53:29,762 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 14:54:56,075 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 14:54:59,390 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 15:08:57,614 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 15:09:02,206 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 15:09:24,366 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 15:09:27,455 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 15:11:10,113 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 15:11:13,204 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 15:35:49,330 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 15:35:54,267 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 15:38:20,263 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 15:38:25,179 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 16:38:25,180 - api.main - INFO - Rate limits reset for all API keys
+2025-11-03 17:38:25,181 - api.main - INFO - Rate limits reset for all API keys
+2025-11-03 18:38:25,182 - api.main - INFO - Rate limits reset for all API keys
+2025-11-03 19:22:49,050 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 19:22:54,686 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 19:23:51,449 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 19:23:55,979 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 19:27:04,718 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 19:27:07,889 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 19:27:43,984 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 19:27:47,197 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 19:30:44,896 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 19:30:48,107 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 19:32:10,839 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 19:32:14,037 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 19:33:31,463 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 19:33:34,660 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-03 19:35:05,320 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-03 19:35:08,598 - api.main - INFO - Starting AI Content Pipeline API
