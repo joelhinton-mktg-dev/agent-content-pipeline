@@ -1,0 +1,468 @@
+{% extends "base.html" %}
+
+{% block title %}AI Content Pipeline Chat Demo{% endblock %}
+
+{% block head %}
+<style>
+    .chat-container {
+        height: 70vh;
+        overflow-y: auto;
+        border: 1px solid #dee2e6;
+        border-radius: 0.5rem;
+        background-color: #f8f9fa;
+    }
+    
+    .message {
+        margin: 10px;
+        padding: 10px 15px;
+        border-radius: 1rem;
+        max-width: 80%;
+        word-wrap: break-word;
+    }
+    
+    .user-message {
+        background-color: #007bff;
+        color: white;
+        margin-left: auto;
+        text-align: right;
+    }
+    
+    .bot-message {
+        background-color: white;
+        color: #333;
+        border: 1px solid #dee2e6;
+        margin-right: auto;
+    }
+    
+    .system-message {
+        background-color: #28a745;
+        color: white;
+        margin: 5px auto;
+        text-align: center;
+        max-width: 60%;
+        font-size: 0.9em;
+    }
+    
+    .error-message {
+        background-color: #dc3545;
+        color: white;
+        margin: 5px auto;
+        text-align: center;
+        max-width: 70%;
+    }
+    
+    .progress-container {
+        background-color: #e9ecef;
+        border-radius: 0.5rem;
+        margin: 10px;
+        padding: 15px;
+    }
+    
+    .download-container {
+        background-color: #d4edda;
+        border: 1px solid #c3e6cb;
+        border-radius: 0.5rem;
+        margin: 10px;
+        padding: 15px;
+    }
+    
+    .timestamp {
+        font-size: 0.75em;
+        opacity: 0.7;
+        margin-top: 5px;
+    }
+    
+    .typing-indicator {
+        display: none;
+        padding: 10px 15px;
+        margin: 10px;
+        background-color: #e9ecef;
+        border-radius: 1rem;
+        max-width: 200px;
+        animation: pulse 1.5s infinite;
+    }
+    
+    @keyframes pulse {
+        0% { opacity: 0.6; }
+        50% { opacity: 1; }
+        100% { opacity: 0.6; }
+    }
+    
+    .pipeline-info {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-radius: 1rem;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid py-4">
+    <div class="row">
+        <!-- Chat Interface -->
+        <div class="col-lg-8">
+            <!-- Pipeline Info -->
+            <div class="pipeline-info">
+                <h4><i class="fas fa-magic me-2"></i>AI Content Pipeline Demo</h4>
+                <p class="mb-2">Generate comprehensive articles with our 8-stage AI pipeline:</p>
+                <div class="row text-center">
+                    <div class="col">📋 Outline</div>
+                    <div class="col">🔍 Research</div>
+                    <div class="col">✍️ Content</div>
+                    <div class="col">📚 Citations</div>
+                </div>
+                <div class="row text-center mt-2">
+                    <div class="col">🎨 Images</div>
+                    <div class="col">✅ Fact-check</div>
+                    <div class="col">🎯 SEO</div>
+                    <div class="col">📤 Publish</div>
+                </div>
+                <p class="mt-3 mb-0"><strong>Just type:</strong> "Generate an article about [your topic]"</p>
+            </div>
+            
+            <!-- Chat Container -->
+            <div class="chat-container" id="chatContainer">
+                <!-- Welcome Message -->
+                <div class="bot-message message">
+                    <strong>AI Pipeline Assistant</strong><br>
+                    Hello! I'm ready to generate comprehensive articles for you using our advanced 8-stage pipeline.<br><br>
+                    <strong>Example commands:</strong><br>
+                    • "Generate an article about AI in healthcare"<br>
+                    • "Create content about sustainable energy for business leaders"<br>
+                    • "Write about cybersecurity trends for IT professionals"<br><br>
+                    Each article includes research, citations, images, fact-checking, and SEO optimization!
+                    <div class="timestamp">
+                        <i class="fas fa-clock me-1"></i>Ready to start
+                    </div>
+                </div>
+                
+                <!-- Typing Indicator -->
+                <div class="typing-indicator message" id="typingIndicator">
+                    <i class="fas fa-ellipsis-h"></i> AI is thinking...
+                </div>
+            </div>
+            
+            <!-- Message Input -->
+            <div class="mt-3">
+                <div class="input-group">
+                    <input type="text" 
+                           class="form-control" 
+                           id="messageInput" 
+                           placeholder="Type your request (e.g., 'Generate an article about AI in healthcare')..."
+                           maxlength="500">
+                    <button class="btn btn-primary" type="button" id="sendButton">
+                        <i class="fas fa-paper-plane me-1"></i>Send
+                    </button>
+                </div>
+                <small class="text-muted mt-1 d-block">
+                    <i class="fas fa-info-circle me-1"></i>
+                    Pipeline typically takes 3-7 minutes. You'll see live progress updates!
+                </small>
+            </div>
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+            <!-- Quick Actions -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h6 class="mb-0"><i class="fas fa-rocket me-2"></i>Quick Start</h6>
+                </div>
+                <div class="card-body">
+                    <button class="btn btn-outline-primary btn-sm mb-2 w-100" onclick="quickGenerate('AI in Healthcare', 'Healthcare professionals')">
+                        🏥 AI in Healthcare
+                    </button>
+                    <button class="btn btn-outline-primary btn-sm mb-2 w-100" onclick="quickGenerate('Cybersecurity Best Practices', 'IT professionals')">
+                        🔒 Cybersecurity Guide
+                    </button>
+                    <button class="btn btn-outline-primary btn-sm mb-2 w-100" onclick="quickGenerate('Sustainable Business Practices', 'Business leaders')">
+                        🌱 Sustainable Business
+                    </button>
+                    <button class="btn btn-outline-primary btn-sm w-100" onclick="quickGenerate('Digital Marketing Trends 2024', 'Marketing professionals')">
+                        📈 Marketing Trends
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Pipeline Status -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h6 class="mb-0"><i class="fas fa-tasks me-2"></i>Pipeline Status</h6>
+                </div>
+                <div class="card-body">
+                    <div id="pipelineStatus">
+                        <div class="text-center text-muted">
+                            <i class="fas fa-clock fa-2x mb-2"></i><br>
+                            Ready to start
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Downloads -->
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0"><i class="fas fa-download me-2"></i>Downloads</h6>
+                </div>
+                <div class="card-body">
+                    <div id="downloadsContainer">
+                        <div class="text-center text-muted">
+                            <i class="fas fa-file-alt fa-2x mb-2"></i><br>
+                            Generated content will appear here
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // WebSocket connection
+    const userId = 'user_' + Math.random().toString(36).substr(2, 9);
+    const ws = new WebSocket(`ws://localhost:8080/ws/${userId}`);
+    
+    // DOM elements
+    const chatContainer = document.getElementById('chatContainer');
+    const messageInput = document.getElementById('messageInput');
+    const sendButton = document.getElementById('sendButton');
+    const typingIndicator = document.getElementById('typingIndicator');
+    const pipelineStatus = document.getElementById('pipelineStatus');
+    const downloadsContainer = document.getElementById('downloadsContainer');
+    
+    // WebSocket event handlers
+    ws.onopen = function(event) {
+        console.log('Connected to WebSocket');
+        addSystemMessage('Connected to AI Pipeline Assistant');
+    };
+    
+    ws.onmessage = function(event) {
+        const data = JSON.parse(event.data);
+        handleWebSocketMessage(data);
+    };
+    
+    ws.onclose = function(event) {
+        console.log('WebSocket connection closed');
+        addErrorMessage('Connection lost. Please refresh the page.');
+    };
+    
+    ws.onerror = function(error) {
+        console.error('WebSocket error:', error);
+        addErrorMessage('Connection error. Please check your network.');
+    };
+    
+    // Message handling
+    function handleWebSocketMessage(data) {
+        switch(data.type) {
+            case 'bot_message':
+                addBotMessage(data.message, data.timestamp);
+                break;
+            case 'generation_started':
+                addSystemMessage(data.message, data.timestamp);
+                updatePipelineStatus('Starting...', 0);
+                break;
+            case 'progress_update':
+                updateProgress(data);
+                break;
+            case 'generation_complete':
+                addSystemMessage(data.message, data.timestamp);
+                handleGenerationComplete(data.result);
+                updatePipelineStatus('Complete!', 100);
+                break;
+            case 'generation_error':
+                addErrorMessage(data.message, data.timestamp);
+                updatePipelineStatus('Error', 0);
+                break;
+        }
+        hideTypingIndicator();
+    }
+    
+    // UI functions
+    function addMessage(content, className, timestamp = null) {
+        const message = document.createElement('div');
+        message.className = `message ${className}`;
+        message.innerHTML = content;
+        
+        if (timestamp) {
+            const time = new Date(timestamp).toLocaleTimeString();
+            message.innerHTML += `<div class="timestamp"><i class="fas fa-clock me-1"></i>${time}</div>`;
+        }
+        
+        chatContainer.appendChild(message);
+        scrollToBottom();
+    }
+    
+    function addBotMessage(text, timestamp) {
+        addMessage(`<strong>AI Assistant:</strong><br>${text.replace(/\n/g, '<br>')}`, 'bot-message', timestamp);
+    }
+    
+    function addUserMessage(text, timestamp) {
+        addMessage(text, 'user-message', timestamp);
+    }
+    
+    function addSystemMessage(text, timestamp) {
+        addMessage(`<i class="fas fa-info-circle me-1"></i>${text}`, 'system-message', timestamp);
+    }
+    
+    function addErrorMessage(text, timestamp) {
+        addMessage(`<i class="fas fa-exclamation-triangle me-1"></i>${text}`, 'error-message', timestamp);
+    }
+    
+    function showTypingIndicator() {
+        typingIndicator.style.display = 'block';
+        scrollToBottom();
+    }
+    
+    function hideTypingIndicator() {
+        typingIndicator.style.display = 'none';
+    }
+    
+    function scrollToBottom() {
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+    
+    function updateProgress(data) {
+        const progressHtml = `
+            <div class="mb-3">
+                <div class="d-flex justify-content-between mb-1">
+                    <small><strong>Stage ${data.stage}/8:</strong> ${data.stage_name}</small>
+                    <small>${data.progress}%</small>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar bg-success" style="width: ${data.progress}%"></div>
+                </div>
+                <small class="text-muted">${data.status}</small>
+            </div>
+        `;
+        
+        const progressContainer = document.createElement('div');
+        progressContainer.className = 'progress-container';
+        progressContainer.innerHTML = progressHtml;
+        chatContainer.appendChild(progressContainer);
+        scrollToBottom();
+    }
+    
+    function updatePipelineStatus(status, progress) {
+        pipelineStatus.innerHTML = `
+            <div class="text-center">
+                <div class="progress mb-2">
+                    <div class="progress-bar" style="width: ${progress}%"></div>
+                </div>
+                <small>${status}</small>
+            </div>
+        `;
+    }
+    
+    function handleGenerationComplete(result) {
+        const summary = result.summary;
+        const downloads = result.downloads;
+        
+        // Add completion message
+        const completionHtml = `
+            <div class="download-container">
+                <h6><i class="fas fa-check-circle text-success me-2"></i>Content Generation Complete!</h6>
+                <div class="row text-center mb-3">
+                    <div class="col-6">
+                        <strong>${summary.word_count}</strong><br>
+                        <small>Words</small>
+                    </div>
+                    <div class="col-6">
+                        <strong>${summary.citation_count}</strong><br>
+                        <small>Citations</small>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-6">
+                        <strong>${summary.processing_time_minutes}</strong><br>
+                        <small>Minutes</small>
+                    </div>
+                    <div class="col-6">
+                        <strong>${summary.downloads_available}</strong><br>
+                        <small>Files</small>
+                    </div>
+                </div>
+            </div>
+        `;
+        chatContainer.insertAdjacentHTML('beforeend', completionHtml);
+        
+        // Update downloads sidebar
+        let downloadsHtml = '<div class="mb-3"><h6>Available Downloads:</h6></div>';
+        downloads.forEach(download => {
+            const sizeKB = Math.round(download.size / 1024);
+            downloadsHtml += `
+                <div class="d-flex justify-content-between align-items-center mb-2 p-2 bg-light rounded">
+                    <div>
+                        <strong>${download.name}</strong><br>
+                        <small class="text-muted">${sizeKB} KB</small>
+                    </div>
+                    <a href="${download.url}" class="btn btn-sm btn-primary" target="_blank">
+                        <i class="fas fa-download"></i>
+                    </a>
+                </div>
+            `;
+        });
+        downloadsContainer.innerHTML = downloadsHtml;
+        
+        scrollToBottom();
+    }
+    
+    // Send message
+    function sendMessage() {
+        const message = messageInput.value.trim();
+        if (!message) return;
+        
+        addUserMessage(message, new Date().toISOString());
+        showTypingIndicator();
+        
+        // Check if this is a content generation request
+        if (message.toLowerCase().includes('generate') || message.toLowerCase().includes('create') || message.toLowerCase().includes('write')) {
+            // Extract topic from message (simple extraction)
+            let topic = message.replace(/generate|create|write|an?|article|about|content/gi, '').trim();
+            if (topic.length < 5) topic = message; // Fallback
+            
+            ws.send(JSON.stringify({
+                type: 'generate_content',
+                topic: topic,
+                audience: 'General audience',
+                length: 1500
+            }));
+        } else {
+            // Regular chat message
+            ws.send(JSON.stringify({
+                type: 'chat_message',
+                message: message
+            }));
+        }
+        
+        messageInput.value = '';
+    }
+    
+    // Quick generate function
+    function quickGenerate(topic, audience = 'General audience') {
+        addUserMessage(`Generate an article about ${topic} for ${audience}`, new Date().toISOString());
+        showTypingIndicator();
+        
+        ws.send(JSON.stringify({
+            type: 'generate_content',
+            topic: topic,
+            audience: audience,
+            length: 1500
+        }));
+    }
+    
+    // Event listeners
+    sendButton.addEventListener('click', sendMessage);
+    messageInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
+    
+    // Auto-focus input
+    messageInput.focus();
+</script>
+{% endblock %}

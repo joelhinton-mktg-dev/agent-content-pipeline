@@ -1,0 +1,90 @@
+{
+  "job_id": "fceff6b2-dd15-4ded-9095-32fe82f54b77",
+  "topic": "The following is a comprehensive, SEO-optimized outline for an article on \"Kubernetes Security 2024\", targeting a word count of 2500-3500 words. It incorporates detailed section breakdowns, keyword strategy, image placement, and internal linking opportunities, designed to outrank existing content by providing in-depth, actionable insights for the current security landscape.",
+  "generated_at": "2025-11-04T21:15:37.134610",
+  "image_count": 5,
+  "images": [
+    {
+      "filename": "fceff6b2-dd15-4ded-9095-32fe82f54b77_hero_1.png",
+      "path": "/home/joel/ai-content-pipeline/outputs/images/fceff6b2-dd15-4ded-9095-32fe82f54b77/fceff6b2-dd15-4ded-9095-32fe82f54b77_hero_1.png",
+      "relative_path": "outputs/images/fceff6b2-dd15-4ded-9095-32fe82f54b77/fceff6b2-dd15-4ded-9095-32fe82f54b77_hero_1.png",
+      "prompt": "Clean and vibrantly colored, professional digital illustration following a minimalist, modern design. Incorporate high-quality digital art in a corporate style, representing an outline of an article on Kubernetes Security for the year 2024. The outlined article has a comprehensive SEO-optimized layout with sections, keyword strategy, image placement, and internal linking opportunities all designed to provide in-depth, actionable insights on the current security landscape. Please keep in mind that the image should have no text or words visible.",
+      "original_prompt": "Professional, modern illustration representing The following is a comprehensive SEO-optimized outline for an article on Kubernetes Security 2024 targeting a word count of 2500-3500 words It incorporates detailed section breakdowns keyword strategy image placement and internal linking opportunities designed to outrank existing content by providing in-depth actionable insights for the current security landscape. Clean, minimalist design with vibrant colors. Corporate style, high-quality digital art. No text or words in the image.",
+      "alt_text": "Hero image representing The following is a comprehensive, SEO-optimized outline for an article on \"Kubernetes Security 2024\", targeting a word count of 2500-3500 words. It incorporates detailed section breakdowns, keyword strategy, image placement, and internal linking opportunities, designed to outrank existing content by providing in-depth, actionable insights for the current security landscape.",
+      "placement_suggestion": "Place at the top of the article as a header image",
+      "section": "introduction",
+      "type": "hero",
+      "size": "1024x1024",
+      "quality": "standard",
+      "generated_at": "2025-11-04T21:14:11.475977"
+    },
+    {
+      "filename": "fceff6b2-dd15-4ded-9095-32fe82f54b77_process_4.png",
+      "path": "/home/joel/ai-content-pipeline/outputs/images/fceff6b2-dd15-4ded-9095-32fe82f54b77/fceff6b2-dd15-4ded-9095-32fe82f54b77_process_4.png",
+      "relative_path": "outputs/images/fceff6b2-dd15-4ded-9095-32fe82f54b77/fceff6b2-dd15-4ded-9095-32fe82f54b77_process_4.png",
+      "prompt": "An infographic that visually represents a clear, step-by-step workflow pertaining to the security aspects of 'Kubernetes Security 2024'. The image should incorporate modern flat design principles with emphasis on directional arrows and interconnected elements signifying coherent flow of information. The color scheme should be fitting for a professional setting, possibly incorporating hues such as blues, greens or grayscale. The image should anticipate a comprehensive article outline and be devoid of text.",
+      "original_prompt": "Clean infographic showing a step-by-step process or workflow related to The following is a comprehensive, SEO-optimized outline for an article on \"Kubernetes Security 2024\", targeting a word count of 2500-3500 words. It incorporates detailed section breakdowns, keyword strategy, image placement, and internal linking opportunities, designed to outrank existing content by providing in-depth, actionable insights for the current security landscape.. Modern flat design with arrows and connected elements. Professional color scheme. No text in the image.",
+      "alt_text": "Process diagram illustrating 3. The Foundational Pillars: Kubernetes 4 C's Security Model",
+      "placement_suggestion": "Insert in the 3. The Foundational Pillars: Kubernetes 4 C's Security Model section",
+      "section": "3. The Foundational Pillars: Kubernetes 4 C's Security Model",
+      "type": "process",
+      "size": "1024x1024",
+      "quality": "standard",
+      "generated_at": "2025-11-04T21:14:36.912538"
+    },
+    {
+      "filename": "fceff6b2-dd15-4ded-9095-32fe82f54b77_data_2.png",
+      "path": "/home/joel/ai-content-pipeline/outputs/images/fceff6b2-dd15-4ded-9095-32fe82f54b77/fceff6b2-dd15-4ded-9095-32fe82f54b77_data_2.png",
+      "relative_path": "outputs/images/fceff6b2-dd15-4ded-9095-32fe82f54b77/fceff6b2-dd15-4ded-9095-32fe82f54b77_data_2.png",
+      "prompt": "Create an abstract visualization of a modern data analytics dashboard screen which represents the concepts and structure of an SEO-optimized article called 'Kubernetes Security 2024'. The dashboard contains varied types of colorful charts and graphs, all flowing in harmony and contributing to a professional business aesthetic. The design is clean and sleek, devoid of specific numbers or text, focusing solely on the visual presentation of data. The charts and graphs, while aesthetically pleasing and colorful, are largely indistinct, symbolizing the various section breakdowns, keyword strategy, image placements, and internal linking opportunities of the article.",
+      "original_prompt": "Modern data visualization dashboard or analytics screen showing charts and graphs related to The following is a comprehensive, SEO-optimized outline for an article on \"Kubernetes Security 2024\", targeting a word count of 2500-3500 words. It incorporates detailed section breakdowns, keyword strategy, image placement, and internal linking opportunities, designed to outrank existing content by providing in-depth, actionable insights for the current security landscape.. Clean interface design with colorful charts. Professional business style. No specific numbers or text.",
+      "alt_text": "Data visualization for Kubernetes Security 2024: Fortifying Your Cloud-Native Defenses",
+      "placement_suggestion": "Place alongside statistics in Kubernetes Security 2024: Fortifying Your Cloud-Native Defenses section",
+      "section": "Kubernetes Security 2024: Fortifying Your Cloud-Native Defenses",
+      "type": "data",
+      "size": "1024x1024",
+      "quality": "standard",
+      "generated_at": "2025-11-04T21:14:55.010187"
+    },
+    {
+      "filename": "fceff6b2-dd15-4ded-9095-32fe82f54b77_data_3.png",
+      "path": "/home/joel/ai-content-pipeline/outputs/images/fceff6b2-dd15-4ded-9095-32fe82f54b77/fceff6b2-dd15-4ded-9095-32fe82f54b77_data_3.png",
+      "relative_path": "outputs/images/fceff6b2-dd15-4ded-9095-32fe82f54b77/fceff6b2-dd15-4ded-9095-32fe82f54b77_data_3.png",
+      "prompt": "A modern data visualization dashboard or analytics screen displaying a series of colorful charts and graphs. The data represented on the screen is related to 'Kubernetes Security 2024'. The interface of the dashboard is clean and sleek, adhering to professional business style aesthetics. The graphical representations should be vibrant and diverse, showcasing pie charts, bar graphs, line graphs, etc., providing a comprehensive visual of data. There are no specific numbers or text on the interface, keeping the attention solely on the graphics and the intuitive design.",
+      "original_prompt": "Modern data visualization dashboard or analytics screen showing charts and graphs related to The following is a comprehensive, SEO-optimized outline for an article on \"Kubernetes Security 2024\", targeting a word count of 2500-3500 words. It incorporates detailed section breakdowns, keyword strategy, image placement, and internal linking opportunities, designed to outrank existing content by providing in-depth, actionable insights for the current security landscape.. Clean interface design with colorful charts. Professional business style. No specific numbers or text.",
+      "alt_text": "Data visualization for 2. The Shifting Sands: Understanding Kubernetes Threats in 2024",
+      "placement_suggestion": "Place alongside statistics in 2. The Shifting Sands: Understanding Kubernetes Threats in 2024 section",
+      "section": "2. The Shifting Sands: Understanding Kubernetes Threats in 2024",
+      "type": "data",
+      "size": "1024x1024",
+      "quality": "standard",
+      "generated_at": "2025-11-04T21:15:15.831334"
+    },
+    {
+      "filename": "fceff6b2-dd15-4ded-9095-32fe82f54b77_data_5.png",
+      "path": "/home/joel/ai-content-pipeline/outputs/images/fceff6b2-dd15-4ded-9095-32fe82f54b77/fceff6b2-dd15-4ded-9095-32fe82f54b77_data_5.png",
+      "relative_path": "outputs/images/fceff6b2-dd15-4ded-9095-32fe82f54b77/fceff6b2-dd15-4ded-9095-32fe82f54b77_data_5.png",
+      "prompt": "Render a modern and professional data visualization dashboard or analytics screen. This screen should contain various colorful charts and graphs, reminiscent of business themes. The displayed data is purely visual and abstract, with no specific numbers or text. The overall design should follow a clean and minimalistic aesthetic, ensuring that the charts and graphs are the main focus. Although the content of the charts and graphs in not particular, they should, in a broad sense, reflect themes related to 'Kubernetes Security' to reflect a theoretical SEO-optimized tech article.",
+      "original_prompt": "Modern data visualization dashboard or analytics screen showing charts and graphs related to The following is a comprehensive, SEO-optimized outline for an article on \"Kubernetes Security 2024\", targeting a word count of 2500-3500 words. It incorporates detailed section breakdowns, keyword strategy, image placement, and internal linking opportunities, designed to outrank existing content by providing in-depth, actionable insights for the current security landscape.. Clean interface design with colorful charts. Professional business style. No specific numbers or text.",
+      "alt_text": "Data visualization for 4. Securing the Brains of Your Operation: Control Plane & API Server Hardening",
+      "placement_suggestion": "Place alongside statistics in 4. Securing the Brains of Your Operation: Control Plane & API Server Hardening section",
+      "section": "4. Securing the Brains of Your Operation: Control Plane & API Server Hardening",
+      "type": "data",
+      "size": "1024x1024",
+      "quality": "standard",
+      "generated_at": "2025-11-04T21:15:36.133769"
+    }
+  ],
+  "configuration": {
+    "model": "dall-e-3",
+    "size": "1024x1024",
+    "quality": "standard",
+    "style": "natural",
+    "max_images": 5
+  },
+  "usage_instructions": {
+    "wordpress": "Upload images to WordPress media library and insert using placement suggestions",
+    "markdown": "Reference images using relative paths: ![alt_text](relative_path)",
+    "html": "Use <img> tags with alt attributes for accessibility"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "job_id": "8650ae57-da80-4eb0-b953-6fdd256ed303",
+  "topic": "Error running outline_generator: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+  "generated_at": "2025-11-04T11:48:49.048887",
+  "image_count": 1,
+  "images": [
+    {
+      "filename": "8650ae57-da80-4eb0-b953-6fdd256ed303_hero_1.png",
+      "path": "/home/joel/ai-content-pipeline/outputs/images/8650ae57-da80-4eb0-b953-6fdd256ed303/8650ae57-da80-4eb0-b953-6fdd256ed303_hero_1.png",
+      "relative_path": "outputs/images/8650ae57-da80-4eb0-b953-6fdd256ed303/8650ae57-da80-4eb0-b953-6fdd256ed303_hero_1.png",
+      "prompt": "Please generate a corporate-styled digital illustration that depicts the concept of a 503 error, specifically that the model is overloaded and unavailable. The design should be modern, professional, and minimalist in nature, with no text or words. Make use of a vibrant color scheme. It could include elements like an overloaded server or busy network infrastructure, rendered in a clean and minimalist style.",
+      "original_prompt": "Professional, modern illustration representing Error running outline_generator 503 UNAVAILABLE error code 503 message The model is overloaded Please try again later status UNAVAILABLE. Clean, minimalist design with vibrant colors. Corporate style, high-quality digital art. No text or words in the image.",
+      "alt_text": "Hero image representing Error running outline_generator: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+      "placement_suggestion": "Place at the top of the article as a header image",
+      "section": "introduction",
+      "type": "hero",
+      "size": "1024x1024",
+      "quality": "standard",
+      "generated_at": "2025-11-04T11:48:48.048066"
+    }
+  ],
+  "configuration": {
+    "model": "dall-e-3",
+    "size": "1024x1024",
+    "quality": "standard",
+    "style": "natural",
+    "max_images": 5
+  },
+  "usage_instructions": {
+    "wordpress": "Upload images to WordPress media library and insert using placement suggestions",
+    "markdown": "Reference images using relative paths: ![alt_text](relative_path)",
+    "html": "Use <img> tags with alt attributes for accessibility"
+  }
+}

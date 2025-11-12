@@ -1,0 +1,76 @@
+{
+  "job_id": "cec94723-9110-46d4-9280-dc4a9c29a9e0",
+  "topic": "The following is a comprehensive, SEO-optimized outline for an article on \"Kubernetes Security 2024,\" designed to be highly actionable and outrank existing content by providing in-depth analysis, current insights, and practical recommendations.",
+  "generated_at": "2025-11-04T14:08:51.394152",
+  "image_count": 4,
+  "images": [
+    {
+      "filename": "cec94723-9110-46d4-9280-dc4a9c29a9e0_hero_1.png",
+      "path": "/home/joel/ai-content-pipeline/outputs/images/cec94723-9110-46d4-9280-dc4a9c29a9e0/cec94723-9110-46d4-9280-dc4a9c29a9e0_hero_1.png",
+      "relative_path": "outputs/images/cec94723-9110-46d4-9280-dc4a9c29a9e0/cec94723-9110-46d4-9280-dc4a9c29a9e0_hero_1.png",
+      "prompt": "A professionally designed digital illustration in a corporate style depicting the concept of Kubernetes Security for the year 2024. The image has a modern, minimalist design scheme with vibrant color palette. Important symbolic elements relating to security, future technology, and Kubernetes can be present in the image. However, the image should not contain any text or words, focusing solely on the visual representation of the topic.",
+      "original_prompt": "Professional, modern illustration representing The following is a comprehensive SEO-optimized outline for an article on Kubernetes Security 2024 designed to be highly actionable and outrank existing content by providing in-depth analysis current insights and practical recommendations. Clean, minimalist design with vibrant colors. Corporate style, high-quality digital art. No text or words in the image.",
+      "alt_text": "Hero image representing The following is a comprehensive, SEO-optimized outline for an article on \"Kubernetes Security 2024,\" designed to be highly actionable and outrank existing content by providing in-depth analysis, current insights, and practical recommendations.",
+      "placement_suggestion": "Place at the top of the article as a header image",
+      "section": "introduction",
+      "type": "hero",
+      "size": "1024x1024",
+      "quality": "standard",
+      "generated_at": "2025-11-04T14:07:53.390094"
+    },
+    {
+      "filename": "cec94723-9110-46d4-9280-dc4a9c29a9e0_data_2.png",
+      "path": "/home/joel/ai-content-pipeline/outputs/images/cec94723-9110-46d4-9280-dc4a9c29a9e0/cec94723-9110-46d4-9280-dc4a9c29a9e0_data_2.png",
+      "relative_path": "outputs/images/cec94723-9110-46d4-9280-dc4a9c29a9e0/cec94723-9110-46d4-9280-dc4a9c29a9e0_data_2.png",
+      "prompt": "Visualize a detailed scene of a modern data visualization dashboard or analytics screen. The interface should be clean and incorporate a variety of charts and graphs related to an anonymous but comprehensive outline for an article pertaining to the cutting edge topic of 'Future Security Technology 2024'. The predetermined style should be professional and business-oriented. The charts should be vibrant in color but void of explicit numbers or text; only symbolic data to construct an abstract, conceptual rendering of the content.",
+      "original_prompt": "Modern data visualization dashboard or analytics screen showing charts and graphs related to The following is a comprehensive, SEO-optimized outline for an article on \"Kubernetes Security 2024,\" designed to be highly actionable and outrank existing content by providing in-depth analysis, current insights, and practical recommendations.. Clean interface design with colorful charts. Professional business style. No specific numbers or text.",
+      "alt_text": "Data visualization for Why Kubernetes Security is More Critical Than Ever",
+      "placement_suggestion": "Place alongside statistics in Why Kubernetes Security is More Critical Than Ever section",
+      "section": "Why Kubernetes Security is More Critical Than Ever",
+      "type": "data",
+      "size": "1024x1024",
+      "quality": "standard",
+      "generated_at": "2025-11-04T14:08:10.593739"
+    },
+    {
+      "filename": "cec94723-9110-46d4-9280-dc4a9c29a9e0_business_4.png",
+      "path": "/home/joel/ai-content-pipeline/outputs/images/cec94723-9110-46d4-9280-dc4a9c29a9e0/cec94723-9110-46d4-9280-dc4a9c29a9e0_business_4.png",
+      "relative_path": "outputs/images/cec94723-9110-46d4-9280-dc4a9c29a9e0/cec94723-9110-46d4-9280-dc4a9c29a9e0_business_4.png",
+      "prompt": "Create an image in a clean corporate style featuring individuals engaged in a discussion in a modern office environment. There should be diverse representation among the characters: a Caucasian man, Black woman, Middle-Eastern man, and Hispanic woman, all dressed in professional business attire. The illustration should represent the concepts of growth, teamwork, and strategy. Intertwined with the scene, subtly integrate shapes and patterns that symbolize Kubernetes: seven-sided polygons (to represent the Kubernetes logo) and lock symbols (to signify security), creating a visual metaphor for Kubernetes Security in 2024.",
+      "original_prompt": "Professional business illustration showing teamwork, growth, or strategy concepts related to The following is a comprehensive, SEO-optimized outline for an article on \"Kubernetes Security 2024,\" designed to be highly actionable and outrank existing content by providing in-depth analysis, current insights, and practical recommendations.. Clean corporate style with people working together. Modern office aesthetic.",
+      "alt_text": "Business concept illustration for A Holistic Approach: Kubernetes Security Across the Lifecycle",
+      "placement_suggestion": "Place in A Holistic Approach: Kubernetes Security Across the Lifecycle section",
+      "section": "A Holistic Approach: Kubernetes Security Across the Lifecycle",
+      "type": "business",
+      "size": "1024x1024",
+      "quality": "standard",
+      "generated_at": "2025-11-04T14:08:29.869071"
+    },
+    {
+      "filename": "cec94723-9110-46d4-9280-dc4a9c29a9e0_business_5.png",
+      "path": "/home/joel/ai-content-pipeline/outputs/images/cec94723-9110-46d4-9280-dc4a9c29a9e0/cec94723-9110-46d4-9280-dc4a9c29a9e0_business_5.png",
+      "relative_path": "outputs/images/cec94723-9110-46d4-9280-dc4a9c29a9e0/cec94723-9110-46d4-9280-dc4a9c29a9e0_business_5.png",
+      "prompt": "Create an illustration in a modern, clean corporate style that represents concepts of teamwork, growth, or strategy. The image should depict a diverse group of business professionals \u2014 a Black woman, a Hispanic man, a Middle-Eastern woman, and a white man \u2014 working together in an office setting. Visualize the workplace with contemporary aesthetics. To correlate with 'Kubernetes Security 2024', subtly integrate elements representing security, technology, and the year 2024.",
+      "original_prompt": "Professional business illustration showing teamwork, growth, or strategy concepts related to The following is a comprehensive, SEO-optimized outline for an article on \"Kubernetes Security 2024,\" designed to be highly actionable and outrank existing content by providing in-depth analysis, current insights, and practical recommendations.. Clean corporate style with people working together. Modern office aesthetic.",
+      "alt_text": "Business concept illustration for The \"Shift-Left\" Security Imperative for K8s",
+      "placement_suggestion": "Place in The \"Shift-Left\" Security Imperative for K8s section",
+      "section": "The \"Shift-Left\" Security Imperative for K8s",
+      "type": "business",
+      "size": "1024x1024",
+      "quality": "standard",
+      "generated_at": "2025-11-04T14:08:50.394297"
+    }
+  ],
+  "configuration": {
+    "model": "dall-e-3",
+    "size": "1024x1024",
+    "quality": "standard",
+    "style": "natural",
+    "max_images": 5
+  },
+  "usage_instructions": {
+    "wordpress": "Upload images to WordPress media library and insert using placement suggestions",
+    "markdown": "Reference images using relative paths: ![alt_text](relative_path)",
+    "html": "Use <img> tags with alt attributes for accessibility"
+  }
+}

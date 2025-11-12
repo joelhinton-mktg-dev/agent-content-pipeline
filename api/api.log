@@ -158,3 +158,327 @@
 2025-11-03 19:33:34,660 - api.main - INFO - Starting AI Content Pipeline API
 2025-11-03 19:35:05,320 - api.main - INFO - Shutting down AI Content Pipeline API
 2025-11-03 19:35:08,598 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-04 11:40:58,478 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-04 11:42:42,631 - api.main - INFO - API key verified: Demo User (1/10)
+2025-11-04 11:42:42,634 - api.main - INFO - Content generation started for job 8650ae57-da80-4eb0-b953-6fdd256ed303 by Demo User
+2025-11-04 11:42:42,635 - api.main - INFO - Starting pipeline for job 8650ae57-da80-4eb0-b953-6fdd256ed303: Cloud Security Best Practices 2024
+2025-11-04 11:42:42,637 - google_adk.google.adk.runners - WARNING - App name mismatch detected. The runner is configured with app name "ai-content-pipeline", but the root agent was loaded from "/home/joel/ai-content-pipeline/.venv/lib/python3.12/site-packages/google/adk/agents", which implies app name "agents".
+2025-11-04 11:42:42,715 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-04 11:42:42,716 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-04 11:44:01,953 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2025-11-04 11:44:01,973 - research_agent.agent - INFO - Starting research phase for content outline
+2025-11-04 11:44:01,973 - research_agent.agent - INFO - Extracted 3 research queries
+2025-11-04 11:44:01,973 - research_agent.agent - INFO - Researching query 1/3: Current industry trends and market analysis...
+2025-11-04 11:44:19,759 - httpx - INFO - HTTP Request: POST https://api.perplexity.ai/chat/completions "HTTP/1.1 200 OK"
+2025-11-04 11:44:20,281 - research_agent.agent - INFO - Researching query 2/3: Expert opinions and thought leadership insights...
+2025-11-04 11:44:36,393 - httpx - INFO - HTTP Request: POST https://api.perplexity.ai/chat/completions "HTTP/1.1 200 OK"
+2025-11-04 11:44:36,915 - research_agent.agent - INFO - Researching query 3/3: Recent case studies and success stories...
+2025-11-04 11:45:07,019 - research_agent.agent - WARNING - Timeout on attempt 1
+2025-11-04 11:45:39,187 - research_agent.agent - WARNING - Timeout on attempt 2
+2025-11-04 11:46:11,336 - research_agent.agent - WARNING - Timeout on attempt 3
+2025-11-04 11:46:11,836 - research_agent.agent - INFO - Research completed: 3 queries, 10 statistics, 2 quotes
+2025-11-04 11:46:11,839 - google_adk.google.adk.runners - WARNING - App name mismatch detected. The runner is configured with app name "ai-content-pipeline", but the root agent was loaded from "/home/joel/ai-content-pipeline/.venv/lib/python3.12/site-packages/google/adk/agents", which implies app name "agents".
+2025-11-04 11:46:11,881 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-04 11:46:11,881 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-04 11:47:10,459 - api.main - INFO - API key verified: Demo User (2/10)
+2025-11-04 11:48:32,609 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2025-11-04 11:48:32,636 - citation_agent.agent - INFO - Starting citation process for content
+2025-11-04 11:48:32,638 - citation_agent.agent - INFO - Identified 0 potential claims for citation
+2025-11-04 11:48:32,638 - citation_agent.agent - INFO - Successfully matched 0 claims to sources
+2025-11-04 11:48:32,638 - citation_agent.agent - INFO - Citation process completed: 0 citations added, 0 uncited claims
+2025-11-04 11:48:32,644 - image_agent.agent - INFO - Starting image generation for job 8650ae57-da80-4eb0-b953-6fdd256ed303
+2025-11-04 11:48:32,644 - image_agent.agent - INFO - Identified 1 image opportunities
+2025-11-04 11:48:32,644 - image_agent.agent - INFO - Generating image for: introduction
+2025-11-04 11:48:46,882 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/images/generations "HTTP/1.1 200 OK"
+2025-11-04 11:48:47,323 - httpx - INFO - HTTP Request: GET https://oaidalleapiprodscus.blob.core.windows.net/private/org-uJpsEDvHBCmEyP0rjWCPRjTJ/user-lzDNcbkm99UJV56Pd5R3LkBu/img-YPWD1C4jgQ6O6ESRdIJHERSF.png?st=2025-11-04T15%3A48%3A46Z&se=2025-11-04T17%3A48%3A46Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=8b33a531-2df9-46a3-bc02-d4b1430a422c&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-11-04T13%3A50%3A16Z&ske=2025-11-05T13%3A50%3A16Z&sks=b&skv=2024-08-04&sig=5NvXOuuJWnHUIpSviW9GBf0RJOCn3wtxkEoYFo4gV9M%3D "HTTP/1.1 200 OK"
+2025-11-04 11:48:48,047 - image_agent.agent - INFO - Downloaded image: /home/joel/ai-content-pipeline/outputs/images/8650ae57-da80-4eb0-b953-6fdd256ed303/8650ae57-da80-4eb0-b953-6fdd256ed303_hero_1.png
+2025-11-04 11:48:49,050 - image_agent.agent - INFO - Created image manifest: /home/joel/ai-content-pipeline/outputs/images/8650ae57-da80-4eb0-b953-6fdd256ed303/manifest.json
+2025-11-04 11:48:49,050 - image_agent.agent - INFO - Image generation completed: 1 images in 16.41s
+2025-11-04 11:48:49,056 - fact_check_agent.agent - INFO - Starting fact-checking process
+2025-11-04 11:48:49,058 - fact_check_agent.agent - INFO - Extracted 0 factual claims for verification
+2025-11-04 11:48:49,060 - google_adk.google.adk.runners - WARNING - App name mismatch detected. The runner is configured with app name "ai-content-pipeline", but the root agent was loaded from "/home/joel/ai-content-pipeline/.venv/lib/python3.12/site-packages/google/adk/agents", which implies app name "agents".
+2025-11-04 11:48:49,096 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-04 11:48:49,096 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-04 11:49:45,041 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-11-04 11:49:45,044 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-04 11:49:45,048 - google_adk.google.adk.runners - WARNING - App name mismatch detected. The runner is configured with app name "ai-content-pipeline", but the root agent was loaded from "/home/joel/ai-content-pipeline/.venv/lib/python3.12/site-packages/google/adk/agents", which implies app name "agents".
+2025-11-04 11:49:45,049 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: seo_optimizer, event id: 5a354b46-0bdd-4a62-b6e6-cf976177c425
+2025-11-04 11:49:45,086 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-04 11:49:45,086 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-04 11:52:12,272 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-11-04 11:52:12,274 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-04 11:52:12,279 - api.main - INFO - Pipeline completed for job 8650ae57-da80-4eb0-b953-6fdd256ed303: 17567 chars, 25% quality
+2025-11-04 12:40:58,480 - api.main - INFO - Rate limits reset for all API keys
+2025-11-04 13:40:58,483 - api.main - INFO - Rate limits reset for all API keys
+2025-11-04 14:00:26,405 - api.main - INFO - API key verified: Demo User (1/10)
+2025-11-04 14:00:59,417 - api.main - INFO - API key verified: Demo User (2/10)
+2025-11-04 14:02:57,021 - api.main - INFO - API key verified: Demo User (3/10)
+2025-11-04 14:02:57,024 - api.main - INFO - Content generation started for job cec94723-9110-46d4-9280-dc4a9c29a9e0 by Demo User
+2025-11-04 14:02:57,024 - api.main - INFO - Starting pipeline for job cec94723-9110-46d4-9280-dc4a9c29a9e0: Kubernetes Security 2024
+2025-11-04 14:02:57,025 - google_adk.google.adk.runners - WARNING - App name mismatch detected. The runner is configured with app name "ai-content-pipeline", but the root agent was loaded from "/home/joel/ai-content-pipeline/.venv/lib/python3.12/site-packages/google/adk/agents", which implies app name "agents".
+2025-11-04 14:02:57,068 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-04 14:02:57,068 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-04 14:04:34,176 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-11-04 14:04:34,210 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-04 14:04:34,215 - research_agent.agent - INFO - Starting research phase for content outline
+2025-11-04 14:04:34,216 - research_agent.agent - INFO - Extracted 5 research queries
+2025-11-04 14:04:34,216 - research_agent.agent - INFO - Researching query 1/5: Latest trends and statistics for Kubernetes Securi...
+2025-11-04 14:04:48,006 - httpx - INFO - HTTP Request: POST https://api.perplexity.ai/chat/completions "HTTP/1.1 200 OK"
+2025-11-04 14:04:48,519 - research_agent.agent - INFO - Researching query 2/5: Current best practices and expert insights on H1 K...
+2025-11-04 14:04:58,754 - httpx - INFO - HTTP Request: POST https://api.perplexity.ai/chat/completions "HTTP/1.1 200 OK"
+2025-11-04 14:04:59,261 - research_agent.agent - INFO - Researching query 3/5: Current best practices and expert insights on H2 U...
+2025-11-04 14:05:05,644 - httpx - INFO - HTTP Request: POST https://api.perplexity.ai/chat/completions "HTTP/1.1 200 OK"
+2025-11-04 14:05:06,154 - research_agent.agent - INFO - Researching query 4/5: Current best practices and expert insights on H2 A...
+2025-11-04 14:05:13,255 - httpx - INFO - HTTP Request: POST https://api.perplexity.ai/chat/completions "HTTP/1.1 200 OK"
+2025-11-04 14:05:13,762 - research_agent.agent - INFO - Researching query 5/5: Recent developments and case studies in ** Kuberne...
+2025-11-04 14:05:25,497 - httpx - INFO - HTTP Request: POST https://api.perplexity.ai/chat/completions "HTTP/1.1 200 OK"
+2025-11-04 14:05:26,013 - research_agent.agent - INFO - Research completed: 5 queries, 21 statistics, 8 quotes
+2025-11-04 14:05:26,014 - google_adk.google.adk.runners - WARNING - App name mismatch detected. The runner is configured with app name "ai-content-pipeline", but the root agent was loaded from "/home/joel/ai-content-pipeline/.venv/lib/python3.12/site-packages/google/adk/agents", which implies app name "agents".
+2025-11-04 14:05:26,020 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: outline_generator, event id: d23e888b-de2d-444f-92e4-befaa35ac579
+2025-11-04 14:05:26,058 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-04 14:05:26,059 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-04 14:07:32,395 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-11-04 14:07:32,424 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-04 14:07:32,428 - citation_agent.agent - INFO - Starting citation process for content
+2025-11-04 14:07:33,327 - citation_agent.agent - INFO - Identified 29 potential claims for citation
+2025-11-04 14:07:33,359 - citation_agent.agent - INFO - Successfully matched 16 claims to sources
+2025-11-04 14:07:33,360 - citation_agent.agent - INFO - Citation process completed: 4 citations added, 13 uncited claims
+2025-11-04 14:07:33,360 - image_agent.agent - INFO - Starting image generation for job cec94723-9110-46d4-9280-dc4a9c29a9e0
+2025-11-04 14:07:33,361 - image_agent.agent - INFO - Identified 5 image opportunities
+2025-11-04 14:07:33,361 - image_agent.agent - INFO - Generating image for: introduction
+2025-11-04 14:07:52,102 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/images/generations "HTTP/1.1 200 OK"
+2025-11-04 14:07:52,577 - httpx - INFO - HTTP Request: GET https://oaidalleapiprodscus.blob.core.windows.net/private/org-uJpsEDvHBCmEyP0rjWCPRjTJ/user-lzDNcbkm99UJV56Pd5R3LkBu/img-Rt6b7BpdO9jw8T7UH1fzdBIN.png?st=2025-11-04T18%3A07%3A51Z&se=2025-11-04T20%3A07%3A51Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=b1a0ae1f-618f-4548-84fd-8b16cacd5485&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-11-04T19%3A07%3A51Z&ske=2025-11-05T19%3A07%3A51Z&sks=b&skv=2024-08-04&sig=ODHA2Q0jKI7GqOU0jJ/PSyFIxPx%2BCLSSVxprs8lmYBY%3D "HTTP/1.1 200 OK"
+2025-11-04 14:07:53,389 - image_agent.agent - INFO - Downloaded image: /home/joel/ai-content-pipeline/outputs/images/cec94723-9110-46d4-9280-dc4a9c29a9e0/cec94723-9110-46d4-9280-dc4a9c29a9e0_hero_1.png
+2025-11-04 14:07:54,390 - image_agent.agent - INFO - Generating image for: Why Kubernetes Security is More Critical Than Ever
+2025-11-04 14:08:09,320 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/images/generations "HTTP/1.1 200 OK"
+2025-11-04 14:08:09,783 - httpx - INFO - HTTP Request: GET https://oaidalleapiprodscus.blob.core.windows.net/private/org-uJpsEDvHBCmEyP0rjWCPRjTJ/user-lzDNcbkm99UJV56Pd5R3LkBu/img-MzRltJkS9KjKJ2rOyBrtqcKU.png?st=2025-11-04T18%3A08%3A09Z&se=2025-11-04T20%3A08%3A09Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=f1dafa11-a0c2-4092-91d4-10981fbda051&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-11-04T16%3A40%3A42Z&ske=2025-11-05T16%3A40%3A42Z&sks=b&skv=2024-08-04&sig=znOXRR4WF6zkCiyhH85EIvKHiPMM6R/97SEWAsQi7Ng%3D "HTTP/1.1 200 OK"
+2025-11-04 14:08:10,593 - image_agent.agent - INFO - Downloaded image: /home/joel/ai-content-pipeline/outputs/images/cec94723-9110-46d4-9280-dc4a9c29a9e0/cec94723-9110-46d4-9280-dc4a9c29a9e0_data_2.png
+2025-11-04 14:08:11,593 - image_agent.agent - INFO - Generating image for: Common Kubernetes Security Threats & Challenges in 2024
+2025-11-04 14:08:12,657 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/images/generations "HTTP/1.1 500 Internal Server Error"
+2025-11-04 14:08:12,658 - image_agent.agent - ERROR - DALL-E API error 500: {
+  "error": {
+    "message": "We were unable to process your prompt. Please try again later. You can retry your request, or contact us through our help center at help.openai.com if the error persists. (Please include the request ID req_c6b9c6d5dec44993a751d78f3199a464 in your message.)",
+    "type": "server_error",
+    "param": null,
+    "code": null
+  }
+}
+2025-11-04 14:08:13,659 - image_agent.agent - INFO - Generating image for: A Holistic Approach: Kubernetes Security Across the Lifecycle
+2025-11-04 14:08:28,688 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/images/generations "HTTP/1.1 200 OK"
+2025-11-04 14:08:29,148 - httpx - INFO - HTTP Request: GET https://oaidalleapiprodscus.blob.core.windows.net/private/org-uJpsEDvHBCmEyP0rjWCPRjTJ/user-lzDNcbkm99UJV56Pd5R3LkBu/img-JG2xiEexJiezfXqrqHMkzdp6.png?st=2025-11-04T18%3A08%3A28Z&se=2025-11-04T20%3A08%3A28Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=f1dafa11-a0c2-4092-91d4-10981fbda051&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-11-04T15%3A30%3A50Z&ske=2025-11-05T15%3A30%3A50Z&sks=b&skv=2024-08-04&sig=SmHt%2BR2XSLYI4xibmw0YdK8igjFnmlKHGlpg2468kuU%3D "HTTP/1.1 200 OK"
+2025-11-04 14:08:29,868 - image_agent.agent - INFO - Downloaded image: /home/joel/ai-content-pipeline/outputs/images/cec94723-9110-46d4-9280-dc4a9c29a9e0/cec94723-9110-46d4-9280-dc4a9c29a9e0_business_4.png
+2025-11-04 14:08:30,870 - image_agent.agent - INFO - Generating image for: The "Shift-Left" Security Imperative for K8s
+2025-11-04 14:08:49,151 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/images/generations "HTTP/1.1 200 OK"
+2025-11-04 14:08:49,634 - httpx - INFO - HTTP Request: GET https://oaidalleapiprodscus.blob.core.windows.net/private/org-uJpsEDvHBCmEyP0rjWCPRjTJ/user-lzDNcbkm99UJV56Pd5R3LkBu/img-7TFG79HAwwVjfzUdPVZQJ0Qc.png?st=2025-11-04T18%3A08%3A49Z&se=2025-11-04T20%3A08%3A49Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=8b33a531-2df9-46a3-bc02-d4b1430a422c&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-11-04T10%3A19%3A59Z&ske=2025-11-05T10%3A19%3A59Z&sks=b&skv=2024-08-04&sig=Putq0n/uxZ5dJj783nc7cMz3KDvRgtlCdycfHJ3%2BaIE%3D "HTTP/1.1 200 OK"
+2025-11-04 14:08:50,394 - image_agent.agent - INFO - Downloaded image: /home/joel/ai-content-pipeline/outputs/images/cec94723-9110-46d4-9280-dc4a9c29a9e0/cec94723-9110-46d4-9280-dc4a9c29a9e0_business_5.png
+2025-11-04 14:08:51,394 - image_agent.agent - INFO - Created image manifest: /home/joel/ai-content-pipeline/outputs/images/cec94723-9110-46d4-9280-dc4a9c29a9e0/manifest.json
+2025-11-04 14:08:51,394 - image_agent.agent - INFO - Image generation completed: 4 images in 78.03s
+2025-11-04 14:08:51,395 - fact_check_agent.agent - INFO - Starting fact-checking process
+2025-11-04 14:08:52,293 - fact_check_agent.agent - INFO - Extracted 21 factual claims for verification
+2025-11-04 14:08:52,403 - fact_check_agent.agent - INFO - Verified 21 claims against research data
+2025-11-04 14:08:52,403 - fact_check_agent.agent - INFO - Fact-checking completed: 5/21 claims verified, accuracy score: 0.437
+2025-11-04 14:08:52,404 - google_adk.google.adk.runners - WARNING - App name mismatch detected. The runner is configured with app name "ai-content-pipeline", but the root agent was loaded from "/home/joel/ai-content-pipeline/.venv/lib/python3.12/site-packages/google/adk/agents", which implies app name "agents".
+2025-11-04 14:08:52,409 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: research_content_creator, event id: d1da8992-790c-4101-b301-e605ddd26acb
+2025-11-04 14:08:52,409 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: outline_generator, event id: d23e888b-de2d-444f-92e4-befaa35ac579
+2025-11-04 14:08:52,449 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-04 14:08:52,450 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-04 14:09:51,094 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-11-04 14:09:51,098 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-04 14:09:51,102 - google_adk.google.adk.runners - WARNING - App name mismatch detected. The runner is configured with app name "ai-content-pipeline", but the root agent was loaded from "/home/joel/ai-content-pipeline/.venv/lib/python3.12/site-packages/google/adk/agents", which implies app name "agents".
+2025-11-04 14:09:51,106 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: seo_optimizer, event id: 90402959-1e26-4b53-bc8e-3964036d1266
+2025-11-04 14:09:51,106 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: research_content_creator, event id: d1da8992-790c-4101-b301-e605ddd26acb
+2025-11-04 14:09:51,106 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: outline_generator, event id: d23e888b-de2d-444f-92e4-befaa35ac579
+2025-11-04 14:09:51,144 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-04 14:09:51,145 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-04 14:14:11,242 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-11-04 14:14:11,278 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-04 14:14:11,290 - api.main - INFO - Pipeline completed for job cec94723-9110-46d4-9280-dc4a9c29a9e0: 233270 chars, 100.0% quality
+2025-11-04 14:40:58,487 - api.main - INFO - Rate limits reset for all API keys
+2025-11-04 15:40:58,492 - api.main - INFO - Rate limits reset for all API keys
+2025-11-04 16:40:58,498 - api.main - INFO - Rate limits reset for all API keys
+2025-11-04 17:40:58,503 - api.main - INFO - Rate limits reset for all API keys
+2025-11-04 18:40:58,505 - api.main - INFO - Rate limits reset for all API keys
+2025-11-04 21:10:06,887 - api.main - INFO - API key verified: Demo User (1/10)
+2025-11-04 21:10:06,902 - api.main - INFO - Content generation started for job fceff6b2-dd15-4ded-9095-32fe82f54b77 by Demo User
+2025-11-04 21:10:06,905 - api.main - INFO - Starting pipeline for job fceff6b2-dd15-4ded-9095-32fe82f54b77: Kubernetes Security 2024
+2025-11-04 21:10:06,910 - google_adk.google.adk.runners - WARNING - App name mismatch detected. The runner is configured with app name "ai-content-pipeline", but the root agent was loaded from "/home/joel/ai-content-pipeline/.venv/lib/python3.12/site-packages/google/adk/agents", which implies app name "agents".
+2025-11-04 21:10:07,009 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-04 21:10:07,011 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-04 21:10:51,746 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-11-04 21:10:51,779 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-04 21:10:51,784 - research_agent.agent - INFO - Starting research phase for content outline
+2025-11-04 21:10:51,785 - research_agent.agent - INFO - Extracted 5 research queries
+2025-11-04 21:10:51,785 - research_agent.agent - INFO - Researching query 1/5: Latest trends and statistics for **SEO Optimized A...
+2025-11-04 21:11:12,545 - httpx - INFO - HTTP Request: POST https://api.perplexity.ai/chat/completions "HTTP/1.1 200 OK"
+2025-11-04 21:11:13,077 - research_agent.agent - INFO - Researching query 2/5: Current best practices and expert insights on 1 In...
+2025-11-04 21:11:22,650 - httpx - INFO - HTTP Request: POST https://api.perplexity.ai/chat/completions "HTTP/1.1 200 OK"
+2025-11-04 21:11:23,160 - research_agent.agent - INFO - Researching query 3/5: Current best practices and expert insights on 2 Th...
+2025-11-04 21:11:33,686 - httpx - INFO - HTTP Request: POST https://api.perplexity.ai/chat/completions "HTTP/1.1 200 OK"
+2025-11-04 21:11:34,204 - research_agent.agent - INFO - Researching query 4/5: Current best practices and expert insights on 3 Th...
+2025-11-04 21:11:44,249 - httpx - INFO - HTTP Request: POST https://api.perplexity.ai/chat/completions "HTTP/1.1 200 OK"
+2025-11-04 21:11:44,763 - research_agent.agent - INFO - Researching query 5/5: Recent developments and case studies in ** Kuberne...
+2025-11-04 21:12:00,633 - httpx - INFO - HTTP Request: POST https://api.perplexity.ai/chat/completions "HTTP/1.1 200 OK"
+2025-11-04 21:12:01,156 - research_agent.agent - INFO - Research completed: 5 queries, 13 statistics, 10 quotes
+2025-11-04 21:12:01,157 - google_adk.google.adk.runners - WARNING - App name mismatch detected. The runner is configured with app name "ai-content-pipeline", but the root agent was loaded from "/home/joel/ai-content-pipeline/.venv/lib/python3.12/site-packages/google/adk/agents", which implies app name "agents".
+2025-11-04 21:12:01,163 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: outline_generator, event id: 68ada639-3914-4b95-8471-a70495ae00a2
+2025-11-04 21:12:01,199 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-04 21:12:01,199 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-04 21:13:49,042 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-11-04 21:13:49,126 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-04 21:13:49,140 - citation_agent.agent - INFO - Starting citation process for content
+2025-11-04 21:13:52,484 - citation_agent.agent - INFO - Identified 45 potential claims for citation
+2025-11-04 21:13:52,550 - citation_agent.agent - INFO - Successfully matched 16 claims to sources
+2025-11-04 21:13:52,555 - citation_agent.agent - INFO - Citation process completed: 1 citations added, 29 uncited claims
+2025-11-04 21:13:52,555 - image_agent.agent - INFO - Starting image generation for job fceff6b2-dd15-4ded-9095-32fe82f54b77
+2025-11-04 21:13:52,557 - image_agent.agent - INFO - Identified 5 image opportunities
+2025-11-04 21:13:52,558 - image_agent.agent - INFO - Generating image for: introduction
+2025-11-04 21:14:10,316 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/images/generations "HTTP/1.1 200 OK"
+2025-11-04 21:14:10,813 - httpx - INFO - HTTP Request: GET https://oaidalleapiprodscus.blob.core.windows.net/private/org-uJpsEDvHBCmEyP0rjWCPRjTJ/user-lzDNcbkm99UJV56Pd5R3LkBu/img-J1IdJN4hxLKOzHodPE24jYDK.png?st=2025-11-05T01%3A14%3A09Z&se=2025-11-05T03%3A14%3A09Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=b1a0ae1f-618f-4548-84fd-8b16cacd5485&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-11-05T02%3A14%3A09Z&ske=2025-11-06T02%3A14%3A09Z&sks=b&skv=2024-08-04&sig=xpZLIlWmXCtw3RGpMkh3yIPgA/FdurBrP01LzHG3Pwo%3D "HTTP/1.1 200 OK"
+2025-11-04 21:14:11,475 - image_agent.agent - INFO - Downloaded image: /home/joel/ai-content-pipeline/outputs/images/fceff6b2-dd15-4ded-9095-32fe82f54b77/fceff6b2-dd15-4ded-9095-32fe82f54b77_hero_1.png
+2025-11-04 21:14:12,475 - image_agent.agent - INFO - Generating image for: 3. The Foundational Pillars: Kubernetes 4 C's Security Model
+2025-11-04 21:14:35,087 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/images/generations "HTTP/1.1 200 OK"
+2025-11-04 21:14:35,763 - httpx - INFO - HTTP Request: GET https://oaidalleapiprodscus.blob.core.windows.net/private/org-uJpsEDvHBCmEyP0rjWCPRjTJ/user-lzDNcbkm99UJV56Pd5R3LkBu/img-ed3FwzQKqoHW0USkaCagSaz3.png?st=2025-11-05T01%3A14%3A34Z&se=2025-11-05T03%3A14%3A34Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-11-05T02%3A14%3A34Z&ske=2025-11-06T02%3A14%3A34Z&sks=b&skv=2024-08-04&sig=vpS1VGt/P7Kr07OjK2VU/lZ5UH8UP2lh0DvRSZrngTc%3D "HTTP/1.1 200 OK"
+2025-11-04 21:14:36,912 - image_agent.agent - INFO - Downloaded image: /home/joel/ai-content-pipeline/outputs/images/fceff6b2-dd15-4ded-9095-32fe82f54b77/fceff6b2-dd15-4ded-9095-32fe82f54b77_process_4.png
+2025-11-04 21:14:37,913 - image_agent.agent - INFO - Generating image for: Kubernetes Security 2024: Fortifying Your Cloud-Native Defenses
+2025-11-04 21:14:53,610 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/images/generations "HTTP/1.1 200 OK"
+2025-11-04 21:14:54,083 - httpx - INFO - HTTP Request: GET https://oaidalleapiprodscus.blob.core.windows.net/private/org-uJpsEDvHBCmEyP0rjWCPRjTJ/user-lzDNcbkm99UJV56Pd5R3LkBu/img-a5GcRJoMOTqHH6WH0yap7pEa.png?st=2025-11-05T01%3A14%3A53Z&se=2025-11-05T03%3A14%3A53Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=ed3ea2f9-5e38-44be-9a1b-7c1e65e4d54f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-11-04T15%3A05%3A02Z&ske=2025-11-05T15%3A05%3A02Z&sks=b&skv=2024-08-04&sig=emYzJK%2BYh6uZSFM83XitO1y4MVnhVmXZNOg5r8EqLIw%3D "HTTP/1.1 200 OK"
+2025-11-04 21:14:55,009 - image_agent.agent - INFO - Downloaded image: /home/joel/ai-content-pipeline/outputs/images/fceff6b2-dd15-4ded-9095-32fe82f54b77/fceff6b2-dd15-4ded-9095-32fe82f54b77_data_2.png
+2025-11-04 21:14:56,010 - image_agent.agent - INFO - Generating image for: 2. The Shifting Sands: Understanding Kubernetes Threats in 2024
+2025-11-04 21:15:14,613 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/images/generations "HTTP/1.1 200 OK"
+2025-11-04 21:15:15,248 - httpx - INFO - HTTP Request: GET https://oaidalleapiprodscus.blob.core.windows.net/private/org-uJpsEDvHBCmEyP0rjWCPRjTJ/user-lzDNcbkm99UJV56Pd5R3LkBu/img-bErj3f8Bs1Dlc3kdm0DqXLLy.png?st=2025-11-05T01%3A15%3A14Z&se=2025-11-05T03%3A15%3A14Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=f1dafa11-a0c2-4092-91d4-10981fbda051&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-11-05T02%3A13%3A48Z&ske=2025-11-06T02%3A13%3A48Z&sks=b&skv=2024-08-04&sig=Pr/e1ycsBSsyUbjRvPv4ubLSxGHIH5xkU/aVOv3MgI8%3D "HTTP/1.1 200 OK"
+2025-11-04 21:15:15,831 - image_agent.agent - INFO - Downloaded image: /home/joel/ai-content-pipeline/outputs/images/fceff6b2-dd15-4ded-9095-32fe82f54b77/fceff6b2-dd15-4ded-9095-32fe82f54b77_data_3.png
+2025-11-04 21:15:16,831 - image_agent.agent - INFO - Generating image for: 4. Securing the Brains of Your Operation: Control Plane & API Server Hardening
+2025-11-04 21:15:35,007 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/images/generations "HTTP/1.1 200 OK"
+2025-11-04 21:15:35,471 - httpx - INFO - HTTP Request: GET https://oaidalleapiprodscus.blob.core.windows.net/private/org-uJpsEDvHBCmEyP0rjWCPRjTJ/user-lzDNcbkm99UJV56Pd5R3LkBu/img-tA51buucwT0TxpbMuytWqrYJ.png?st=2025-11-05T01%3A15%3A34Z&se=2025-11-05T03%3A15%3A34Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-11-05T02%3A15%3A34Z&ske=2025-11-06T02%3A15%3A34Z&sks=b&skv=2024-08-04&sig=rWKkmRXnZyZLFiqUi3C0hUCJTvwIOUk4jQEHrPeiaCk%3D "HTTP/1.1 200 OK"
+2025-11-04 21:15:36,133 - image_agent.agent - INFO - Downloaded image: /home/joel/ai-content-pipeline/outputs/images/fceff6b2-dd15-4ded-9095-32fe82f54b77/fceff6b2-dd15-4ded-9095-32fe82f54b77_data_5.png
+2025-11-04 21:15:37,135 - image_agent.agent - INFO - Created image manifest: /home/joel/ai-content-pipeline/outputs/images/fceff6b2-dd15-4ded-9095-32fe82f54b77/manifest.json
+2025-11-04 21:15:37,135 - image_agent.agent - INFO - Image generation completed: 5 images in 104.58s
+2025-11-04 21:15:37,136 - fact_check_agent.agent - INFO - Starting fact-checking process
+2025-11-04 21:15:40,372 - fact_check_agent.agent - INFO - Extracted 51 factual claims for verification
+2025-11-04 21:15:40,645 - fact_check_agent.agent - INFO - Verified 51 claims against research data
+2025-11-04 21:15:40,646 - fact_check_agent.agent - INFO - Fact-checking completed: 12/51 claims verified, accuracy score: 0.441
+2025-11-04 21:15:40,646 - google_adk.google.adk.runners - WARNING - App name mismatch detected. The runner is configured with app name "ai-content-pipeline", but the root agent was loaded from "/home/joel/ai-content-pipeline/.venv/lib/python3.12/site-packages/google/adk/agents", which implies app name "agents".
+2025-11-04 21:15:40,653 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: research_content_creator, event id: 9a106ca5-8d38-41ba-974b-a061dcde1ee5
+2025-11-04 21:15:40,653 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: outline_generator, event id: 68ada639-3914-4b95-8471-a70495ae00a2
+2025-11-04 21:15:40,694 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-04 21:15:40,695 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-04 21:16:17,554 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-11-04 21:16:17,557 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-04 21:16:17,563 - google_adk.google.adk.runners - WARNING - App name mismatch detected. The runner is configured with app name "ai-content-pipeline", but the root agent was loaded from "/home/joel/ai-content-pipeline/.venv/lib/python3.12/site-packages/google/adk/agents", which implies app name "agents".
+2025-11-04 21:16:17,567 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: seo_optimizer, event id: 07296e23-a34a-4415-ada4-a0011daa78de
+2025-11-04 21:16:17,567 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: research_content_creator, event id: 9a106ca5-8d38-41ba-974b-a061dcde1ee5
+2025-11-04 21:16:17,567 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: outline_generator, event id: 68ada639-3914-4b95-8471-a70495ae00a2
+2025-11-04 21:16:17,604 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-04 21:16:17,604 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-04 21:18:10,594 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-11-04 21:18:10,628 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-04 21:18:10,641 - api.main - INFO - Pipeline completed for job fceff6b2-dd15-4ded-9095-32fe82f54b77: 280752 chars, 100.0% quality
+2025-11-04 21:19:47,647 - api.main - INFO - API key verified: Demo User (2/10)
+2025-11-04 21:19:56,803 - api.main - INFO - API key verified: Demo User (3/10)
+2025-11-04 21:21:16,513 - api.main - INFO - API key verified: Demo User (4/10)
+2025-11-04 21:24:28,277 - api.main - INFO - API key verified: Demo User (5/10)
+2025-11-04 21:24:54,670 - api.main - INFO - API key verified: Demo User (6/10)
+2025-11-04 21:34:20,894 - api.main - INFO - Rate limits reset for all API keys
+2025-11-04 21:49:29,087 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-04 21:49:33,902 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-04 21:49:52,954 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-04 21:49:56,023 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-04 21:50:36,945 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-04 21:50:40,078 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-04 21:50:54,920 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-04 21:50:57,975 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-04 21:52:00,441 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-04 21:52:03,569 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-04 22:52:03,569 - api.main - INFO - Rate limits reset for all API keys
+2025-11-04 23:52:03,573 - api.main - INFO - Rate limits reset for all API keys
+2025-11-05 10:32:10,316 - api.main - INFO - Rate limits reset for all API keys
+2025-11-05 11:32:10,319 - api.main - INFO - Rate limits reset for all API keys
+2025-11-05 12:32:10,323 - api.main - INFO - Rate limits reset for all API keys
+2025-11-05 13:32:10,327 - api.main - INFO - Rate limits reset for all API keys
+2025-11-05 14:32:10,329 - api.main - INFO - Rate limits reset for all API keys
+2025-11-05 15:32:10,331 - api.main - INFO - Rate limits reset for all API keys
+2025-11-05 16:32:10,334 - api.main - INFO - Rate limits reset for all API keys
+2025-11-05 17:32:10,338 - api.main - INFO - Rate limits reset for all API keys
+2025-11-05 18:32:10,345 - api.main - INFO - Rate limits reset for all API keys
+2025-11-05 19:32:10,352 - api.main - INFO - Rate limits reset for all API keys
+2025-11-05 20:32:10,358 - api.main - INFO - Rate limits reset for all API keys
+2025-11-05 21:32:10,361 - api.main - INFO - Rate limits reset for all API keys
+2025-11-05 22:32:10,363 - api.main - INFO - Rate limits reset for all API keys
+2025-11-06 09:31:45,641 - api.main - INFO - Rate limits reset for all API keys
+2025-11-06 10:31:45,646 - api.main - INFO - Rate limits reset for all API keys
+2025-11-06 11:31:45,652 - api.main - INFO - Rate limits reset for all API keys
+2025-11-06 12:31:45,664 - api.main - INFO - Rate limits reset for all API keys
+2025-11-06 13:31:45,667 - api.main - INFO - Rate limits reset for all API keys
+2025-11-06 14:31:45,672 - api.main - INFO - Rate limits reset for all API keys
+2025-11-06 15:31:45,679 - api.main - INFO - Rate limits reset for all API keys
+2025-11-06 16:31:45,687 - api.main - INFO - Rate limits reset for all API keys
+2025-11-06 17:31:45,693 - api.main - INFO - Rate limits reset for all API keys
+2025-11-06 18:31:45,697 - api.main - INFO - Rate limits reset for all API keys
+2025-11-07 09:27:27,792 - api.main - INFO - Rate limits reset for all API keys
+2025-11-07 10:27:27,795 - api.main - INFO - Rate limits reset for all API keys
+2025-11-07 11:27:27,798 - api.main - INFO - Rate limits reset for all API keys
+2025-11-07 12:27:27,800 - api.main - INFO - Rate limits reset for all API keys
+2025-11-07 13:27:27,804 - api.main - INFO - Rate limits reset for all API keys
+2025-11-07 14:27:27,808 - api.main - INFO - Rate limits reset for all API keys
+2025-11-07 15:27:27,811 - api.main - INFO - Rate limits reset for all API keys
+2025-11-07 16:29:30,505 - api.main - INFO - Rate limits reset for all API keys
+2025-11-07 17:29:30,507 - api.main - INFO - Rate limits reset for all API keys
+2025-11-07 18:29:30,510 - api.main - INFO - Rate limits reset for all API keys
+2025-11-08 10:18:12,236 - api.main - INFO - Rate limits reset for all API keys
+2025-11-08 11:18:12,239 - api.main - INFO - Rate limits reset for all API keys
+2025-11-08 12:18:12,242 - api.main - INFO - Rate limits reset for all API keys
+2025-11-08 13:18:12,244 - api.main - INFO - Rate limits reset for all API keys
+2025-11-09 10:24:14,390 - api.main - INFO - Rate limits reset for all API keys
+2025-11-09 11:24:14,393 - api.main - INFO - Rate limits reset for all API keys
+2025-11-09 12:24:14,395 - api.main - INFO - Rate limits reset for all API keys
+2025-11-09 13:24:14,399 - api.main - INFO - Rate limits reset for all API keys
+2025-11-09 14:24:14,402 - api.main - INFO - Rate limits reset for all API keys
+2025-11-09 15:24:14,404 - api.main - INFO - Rate limits reset for all API keys
+2025-11-09 16:24:14,409 - api.main - INFO - Rate limits reset for all API keys
+2025-11-09 16:45:21,503 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-09 16:45:26,710 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-09 16:46:45,035 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-09 16:46:48,071 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-09 16:58:42,371 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-09 16:58:45,634 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-09 17:58:45,636 - api.main - INFO - Rate limits reset for all API keys
+2025-11-09 18:58:45,639 - api.main - INFO - Rate limits reset for all API keys
+2025-11-09 19:58:45,645 - api.main - INFO - Rate limits reset for all API keys
+2025-11-09 20:58:45,650 - api.main - INFO - Rate limits reset for all API keys
+2025-11-10 10:01:46,410 - api.main - INFO - Rate limits reset for all API keys
+2025-11-10 11:01:46,420 - api.main - INFO - Rate limits reset for all API keys
+2025-11-10 12:01:46,423 - api.main - INFO - Rate limits reset for all API keys
+2025-11-10 13:01:46,424 - api.main - INFO - Rate limits reset for all API keys
+2025-11-10 14:01:46,429 - api.main - INFO - Rate limits reset for all API keys
+2025-11-10 15:01:46,436 - api.main - INFO - Rate limits reset for all API keys
+2025-11-10 16:01:46,442 - api.main - INFO - Rate limits reset for all API keys
+2025-11-10 17:01:46,447 - api.main - INFO - Rate limits reset for all API keys
+2025-11-10 18:01:46,454 - api.main - INFO - Rate limits reset for all API keys
+2025-11-10 19:01:46,459 - api.main - INFO - Rate limits reset for all API keys
+2025-11-10 21:34:09,446 - api.main - INFO - Rate limits reset for all API keys
+2025-11-10 22:34:09,449 - api.main - INFO - Rate limits reset for all API keys
+2025-11-10 23:34:09,454 - api.main - INFO - Rate limits reset for all API keys
+2025-11-11 08:53:49,302 - api.main - INFO - Rate limits reset for all API keys
+2025-11-11 09:53:49,319 - api.main - INFO - Rate limits reset for all API keys
+2025-11-11 10:53:49,323 - api.main - INFO - Rate limits reset for all API keys
+2025-11-11 11:53:49,326 - api.main - INFO - Rate limits reset for all API keys
+2025-11-11 12:53:49,327 - api.main - INFO - Rate limits reset for all API keys
+2025-11-11 13:53:49,332 - api.main - INFO - Rate limits reset for all API keys
+2025-11-11 14:53:49,349 - api.main - INFO - Rate limits reset for all API keys
+2025-11-11 15:53:49,356 - api.main - INFO - Rate limits reset for all API keys
+2025-11-11 16:53:49,364 - api.main - INFO - Rate limits reset for all API keys
+2025-11-11 17:53:49,367 - api.main - INFO - Rate limits reset for all API keys
+2025-11-11 19:36:45,563 - api.main - INFO - Rate limits reset for all API keys
+2025-11-11 20:36:45,573 - api.main - INFO - Rate limits reset for all API keys
+2025-11-11 21:34:26,334 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-11 21:34:31,934 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-11 21:34:51,483 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-11 21:34:54,639 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-11 21:35:43,075 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-11 21:35:46,352 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-11 21:39:30,787 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-11 21:39:33,840 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-11 21:43:54,143 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-11 21:43:57,416 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-11 21:46:51,574 - api.main - INFO - Shutting down AI Content Pipeline API
+2025-11-11 21:46:54,825 - api.main - INFO - Starting AI Content Pipeline API

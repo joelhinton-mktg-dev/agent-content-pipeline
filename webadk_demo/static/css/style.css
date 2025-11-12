@@ -1,0 +1,383 @@
+/* AI Content Pipeline Demo - Custom Styles */
+
+:root {
+    --primary-color: #667eea;
+    --secondary-color: #764ba2;
+    --success-color: #28a745;
+    --info-color: #17a2b8;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+}
+
+/* Body and Layout */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+main {
+    background: rgba(255, 255, 255, 0.95);
+    min-height: calc(100vh - 200px);
+    backdrop-filter: blur(10px);
+}
+
+/* Navigation */
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+/* Cards */
+.card {
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.card-header {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+/* Chat Styles */
+.chat-container {
+    background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+    border: 2px solid rgba(102, 126, 234, 0.2);
+    max-height: 70vh;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.chat-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+.chat-container::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+.message {
+    position: relative;
+    animation: slideIn 0.3s ease-out;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.user-message {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    margin-left: 20%;
+}
+
+.bot-message {
+    background: white;
+    color: var(--dark-color);
+    margin-right: 20%;
+    border-left: 4px solid var(--info-color);
+}
+
+.system-message {
+    background: linear-gradient(135deg, var(--success-color), #20c997);
+    color: white;
+    text-align: center;
+    margin: 10px auto;
+    max-width: 70%;
+    font-weight: 500;
+}
+
+.error-message {
+    background: linear-gradient(135deg, var(--danger-color), #e74c3c);
+    color: white;
+    text-align: center;
+    margin: 10px auto;
+    max-width: 70%;
+    font-weight: 500;
+}
+
+.progress-container {
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    border: 1px solid #2196f3;
+    border-left: 4px solid #2196f3;
+    margin: 15px auto;
+    max-width: 90%;
+    animation: progressSlide 0.5s ease-out;
+}
+
+@keyframes progressSlide {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.download-container {
+    background: linear-gradient(135deg, #e8f5e8, #d4edda);
+    border: 1px solid var(--success-color);
+    border-left: 4px solid var(--success-color);
+    margin: 15px auto;
+    max-width: 90%;
+    animation: downloadSlide 0.5s ease-out;
+}
+
+@keyframes downloadSlide {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.timestamp {
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.typing-indicator {
+    background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+    color: var(--dark-color);
+    margin-right: 60%;
+}
+
+/* Pipeline Info */
+.pipeline-info {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    box-shadow: 0 0.5rem 1rem rgba(102, 126, 234, 0.3);
+}
+
+.pipeline-info .row div {
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 2px;
+    border-radius: 0.25rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4);
+    transform: translateY(-1px);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-color: var(--primary-color);
+    color: white;
+}
+
+/* Input Groups */
+.form-control {
+    border-radius: 0.5rem;
+    border: 2px solid rgba(102, 126, 234, 0.2);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+.input-group .btn {
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+/* Progress Bars */
+.progress {
+    height: 8px;
+    background-color: rgba(102, 126, 234, 0.1);
+    border-radius: 4px;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transition: width 0.6s ease;
+}
+
+/* Sidebar Enhancements */
+.card .list-group-item {
+    border: none;
+    background: rgba(102, 126, 234, 0.05);
+    margin-bottom: 2px;
+    border-radius: 0.25rem;
+}
+
+.card .list-group-item:hover {
+    background: rgba(102, 126, 234, 0.1);
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, var(--light-color), #e9ecef) !important;
+    border-top: 3px solid var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .message {
+        max-width: 95%;
+    }
+    
+    .user-message {
+        margin-left: 5%;
+    }
+    
+    .bot-message {
+        margin-right: 5%;
+    }
+    
+    .pipeline-info .row div {
+        font-size: 0.75rem;
+        padding: 3px;
+    }
+    
+    .chat-container {
+        height: 60vh;
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.bounce-in {
+    animation: bounceIn 0.6s ease-out;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Status Indicators */
+.status-online {
+    color: var(--success-color);
+}
+
+.status-processing {
+    color: var(--warning-color);
+    animation: pulse 2s infinite;
+}
+
+.status-error {
+    color: var(--danger-color);
+}
+
+/* Custom Scrollbar for better UX */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) var(--light-color);
+}
+
+/* Loading Spinner */
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Accessibility Improvements */
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .chat-container {
+        border: 3px solid #000;
+    }
+    
+    .message {
+        border: 2px solid #000;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

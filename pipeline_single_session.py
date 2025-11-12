@@ -70,17 +70,25 @@ class SingleSessionPipelineOrchestrator:
             print(f"   Session ID: {self.session_id}")
             print(f"   Prompt: {prompt[:100]}...")
             
-            # Import the specific agent
+            # Import the specific agent - Updated for all 8 agents
             if agent_name == 'outline_generator':
                 from outline_generator.agent import root_agent as agent
+            elif agent_name == 'research_agent':
+                from research_agent.agent import root_agent as agent
             elif agent_name == 'research_content_creator':
                 from research_content_creator.agent import root_agent as agent
+            elif agent_name == 'citation_agent':
+                from citation_agent.agent import root_agent as agent
+            elif agent_name == 'image_agent':
+                from image_agent.agent import root_agent as agent
+            elif agent_name == 'fact_check_agent':
+                from fact_check_agent.agent import root_agent as agent
             elif agent_name == 'seo_optimizer':
                 from seo_optimizer.agent import root_agent as agent
             elif agent_name == 'publishing_coordinator':
                 from publishing_coordinator.agent import root_agent as agent
             else:
-                return f"Error: Unknown agent {agent_name}"
+                return f"Error: Unknown agent {agent_name}. Available agents: outline_generator, research_agent, research_content_creator, citation_agent, image_agent, fact_check_agent, seo_optimizer, publishing_coordinator"
             
             # Create runner for this agent (but use same session)
             runner = Runner(
