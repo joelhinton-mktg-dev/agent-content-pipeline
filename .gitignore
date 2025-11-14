@@ -272,3 +272,6 @@ memory_profile_*.txt
 # Custom Exclusions
 # ========================
 # Add project-specific patterns below this line
+
+# Archive directory for old test outputs and scripts
+_archive/

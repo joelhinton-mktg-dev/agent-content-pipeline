@@ -482,3 +482,5 @@
 2025-11-11 21:43:57,416 - api.main - INFO - Starting AI Content Pipeline API
 2025-11-11 21:46:51,574 - api.main - INFO - Shutting down AI Content Pipeline API
 2025-11-11 21:46:54,825 - api.main - INFO - Starting AI Content Pipeline API
+2025-11-11 22:46:54,826 - api.main - INFO - Rate limits reset for all API keys
+2025-11-11 23:46:54,830 - api.main - INFO - Rate limits reset for all API keys
